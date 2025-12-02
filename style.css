@@ -1,8 +1,9 @@
 /*
-Theme Name: Estes Park Colorado
-Description: Static site guide for Estes Park, Colorado
+Theme Name: Denver Sam
+Description: Personal car hire service by Sam - Premium transportation in Denver
 Version: 1.0
-Author: Custom
+Author: Sam
+Domain: denversam.com
 */
 
 * {
@@ -65,6 +66,19 @@ textarea:focus,
 select:focus {
     outline: 2px solid #2c3e50;
     outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    body {
+        background: #fff;
+        color: #000;
+    }
+
+    .hero-section {
+        background: #2c3e50;
+        color: #fff;
+    }
 }
 
 /* Reduced motion support */
@@ -185,6 +199,12 @@ select:focus {
     color: #3498db;
 }
 
+.mobile-menu .contact-info {
+    margin-top: 50px;
+    font-size: 18px;
+    color: #666;
+}
+
 .mobile-menu .book-btn {
     margin-top: 30px;
     display: inline-block;
@@ -201,6 +221,20 @@ select:focus {
     display: flex;
     align-items: center;
     gap: 20px;
+}
+
+.contact-info {
+    font-size: 14px;
+    color: #666;
+}
+
+.contact-info a {
+    color: #666;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: #3498db;
 }
 
 .book-now-btn {
@@ -241,6 +275,7 @@ select:focus {
     font-weight: 700;
     margin-bottom: 20px;
     line-height: 1.2;
+    color: #fff;
 }
 
 .hero-subtitle {
@@ -266,6 +301,7 @@ select:focus {
     font-weight: 600;
     font-size: 18px;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .primary-btn:hover {
@@ -283,6 +319,7 @@ select:focus {
     font-size: 18px;
     border: 2px solid #fff;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .secondary-btn-hero:hover {
@@ -299,6 +336,14 @@ select:focus {
 }
 
 .alt-bg {
+    background: #f8f9fa;
+}
+
+.category-section {
+    background: #fff;
+}
+
+.category-section.alt-bg {
     background: #f8f9fa;
 }
 
@@ -319,6 +364,7 @@ select:focus {
     color: #666;
     max-width: 600px;
     margin: 0 auto;
+    line-height: 1.6;
 }
 
 /* Article Content */
@@ -389,7 +435,8 @@ select:focus {
 
 /* FAQ Section */
 .faq-section {
-    background: #f8f9fa;
+    background: #fff;
+    padding: 80px 20px;
 }
 
 .faq-container {
@@ -398,7 +445,7 @@ select:focus {
 }
 
 .faq-item {
-    background: #fff;
+    background: #f8f9fa;
     padding: 30px;
     border-radius: 12px;
     margin-bottom: 25px;
@@ -466,10 +513,21 @@ select:focus {
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-.cta-note {
+.cta-phone {
     margin-top: 20px;
-    font-size: 0.9rem;
-    color: #cbd5e1;
+    font-size: 1rem;
+    color: #e0f2fe;
+}
+
+.cta-phone a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid #fff;
+}
+
+.cta-phone a:hover {
+    border-bottom: 2px solid #fff;
 }
 
 /* Footer Styles */
@@ -498,11 +556,15 @@ select:focus {
     font-weight: 600;
 }
 
-.footer-section p,
-.footer-section li {
+.footer-section p {
     color: #9ca3af;
     margin-bottom: 10px;
     line-height: 1.6;
+}
+
+.footer-section li {
+    color: #9ca3af;
+    margin-bottom: 10px;
 }
 
 .footer-section strong {
@@ -511,6 +573,7 @@ select:focus {
 
 .footer-section ul {
     list-style: none;
+    padding: 0;
 }
 
 .footer-section a {
@@ -521,6 +584,10 @@ select:focus {
 
 .footer-section a:hover {
     color: #e0f2fe;
+}
+
+.footer-section address {
+    font-style: normal;
 }
 
 .footer-bottom {
@@ -535,18 +602,21 @@ select:focus {
     margin-bottom: 10px;
 }
 
-.footer-disclaimer {
-    font-size: 13px;
-    color: #6b7280;
+.footer-legal {
+    margin-top: 10px;
 }
 
-.footer-disclaimer a {
+.footer-legal a {
     color: #9ca3af;
-    text-decoration: underline;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin: 0 5px;
 }
 
-.footer-disclaimer a:hover {
+.footer-legal a:hover,
+.footer-legal a:focus {
     color: #e0f2fe;
+    text-decoration: underline;
 }
 
 /* Responsive Design */
@@ -638,6 +708,10 @@ select:focus {
         padding: 25px 20px;
     }
 
+    .faq-section {
+        padding: 60px 15px;
+    }
+
     .faq-item {
         padding: 20px;
     }
@@ -648,6 +722,10 @@ select:focus {
 
     .site-logo {
         font-size: 18px;
+    }
+
+    .cta-section {
+        padding: 60px 15px;
     }
 
     .cta-section h2 {
