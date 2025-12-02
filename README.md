@@ -1,30 +1,36 @@
-# Estes Park, Colorado - Information Guide
+# Estes Park Transportation Guide - Denver Sam Subdomain
 
-A beautiful, responsive static website guide for Estes Park, Colorado. Built with clean HTML, CSS, and JavaScript, perfect for GitHub Pages deployment.
+A focused, user-oriented landing page for Denver Sam's Estes Park car service. This page is designed as a subdomain/subpage of denversam.com, specifically targeting customers looking for reliable transportation from Denver to Estes Park and Rocky Mountain National Park.
+
+## Purpose
+
+This is NOT a standalone tourism site. This is part of Denver Sam's car hire service website, focusing on:
+- Estes Park as a destination Sam serves from Denver
+- User intent: Finding reliable transportation to Estes Park
+- Conversion: Booking rides through denversam.com
+- SEO: Ranking for "Denver to Estes Park transportation" keywords
 
 ## Features
 
+- **Brand Consistency** - Matches denversam.com design and branding perfectly
+- **User-Oriented** - Simple, effective layout focused on user intent (booking transportation)
 - **Responsive Design** - Works seamlessly on desktop, tablet, and mobile devices
-- **Accessible** - WCAG 2.1 compliant with proper semantic HTML and ARIA labels
-- **Fast Loading** - Optimized static site with minimal dependencies
-- **SEO Optimized** - Proper meta tags and structured content
+- **SEO Optimized** - CTR-friendly titles and meta descriptions for transportation keywords
+- **Conversion Focused** - All CTAs link to denversam.com booking form
 - **Google Analytics** - Integrated tracking with GA4 and Google Tag Manager
-- **Modern UI** - Clean design matching the Denver Sam WordPress theme aesthetic
 
 ## What's Included
 
 ### Content Sections
 
-1. **Hero Section** - Welcoming introduction with call-to-action buttons
-2. **About Estes Park** - Conversational overview of the town
-3. **Hotels** - 6 categories of accommodations
-4. **Restaurants** - 6 types of dining options
-5. **Attractions** - Must-see destinations and activities
-6. **Parks & Natural Areas** - Outdoor recreation spots
-7. **Activities** - Adventure opportunities
-8. **FAQ Section** - 10 commonly asked questions with detailed answers
-9. **Booking CTA** - Call-to-action for planning visits
-10. **Footer** - Comprehensive navigation and resources
+1. **Hero Section** - Clear value proposition: Safe rides to Estes Park from Denver
+2. **Why Choose Sam** - Trust-building content from Sam's perspective (first person)
+3. **Where I'll Take You** - Specific destinations Sam serves in Estes Park area
+4. **What You Can Do** - Activities passengers can enjoy (from driver's perspective)
+5. **Best Times to Visit** - Seasonal guide showing year-round service
+6. **FAQ Section** - 8 service-specific questions passengers actually ask
+7. **Booking CTA** - Direct link to denversam.com booking form
+8. **Footer** - Matches denversam.com footer exactly with all links back to main site
 
 ### Technical Features
 
@@ -94,13 +100,32 @@ npx http-server
 
 Then visit `http://localhost:8000` in your browser.
 
-## GitHub Pages Deployment
+## Deployment Options
 
-### Quick Setup
+This page can be deployed as:
+1. **Subdomain**: estes.denversam.com (recommended)
+2. **Subdirectory**: denversam.com/estes
+3. **Separate GitHub Pages**: username.github.io/estes (for testing)
+
+### Subdomain Setup (Recommended)
+
+To set up as estes.denversam.com:
+
+1. Deploy to GitHub Pages (see instructions below)
+2. In your domain registrar (where you bought denversam.com), add a CNAME record:
+   - Type: CNAME
+   - Name: estes
+   - Value: yourusername.github.io
+3. In your GitHub repository settings > Pages, add custom domain: estes.denversam.com
+4. Wait for DNS propagation (can take up to 24 hours)
+
+### GitHub Pages Deployment
+
+#### Quick Setup
 
 1. **Create a GitHub Repository**
    - Go to GitHub and create a new repository
-   - Name it anything you like (e.g., `estes-park-guide`)
+   - Name it `estes` or `estes-denversam`
 
 2. **Upload Your Files**
    ```bash
@@ -283,15 +308,21 @@ gtag('config', 'GT-YOUR-TAG-ID');
 
 ## Credits
 
-**Design Based On**: Denver Sam WordPress Theme
-**Location**: Estes Park, Colorado
+**Parent Site**: denversam.com (Denver Sam Car Hire Service)
+**Purpose**: Estes Park transportation landing page / subdomain
+**Design**: Matches Denver Sam WordPress theme exactly
 **Built With**: HTML5, CSS3, JavaScript (ES6+)
 **Fonts**: Inter by Rasmus Andersson
 **Analytics**: Google Analytics 4 & Google Tag Manager
 
-## License
+## Important Links
 
-This is a custom website. Modify and use as needed for your purposes.
+- **Main Site**: https://denversam.com
+- **Booking Form**: https://denversam.com/#booking-form
+- **Phone**: (720) 900-5430
+- **Email**: info@denversam.com
+
+All "Book Now" CTAs on this page direct to the main denversam.com booking form.
 
 ## Support
 
@@ -312,6 +343,6 @@ For questions or issues:
 
 ---
 
-**Ready to Deploy?** Follow the GitHub Pages setup instructions above and your site will be live in minutes!
+**Ready to Deploy?** Follow the GitHub Pages setup instructions above and your subdomain will be live in minutes!
 
-Visit [Estes Park Official Site](https://www.estes.org) for more information about this beautiful Colorado mountain town.
+**Part of Denver Sam Car Hire Service** - Professional, reliable transportation throughout Colorado. Visit [denversam.com](https://denversam.com) to learn more or book your ride.
