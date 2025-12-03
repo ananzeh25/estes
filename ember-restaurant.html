@@ -24,22 +24,21 @@
     })(window,document,'script','dataLayer','GT-5N2922J');</script>
 </head>
 <body>
-    <header class="site-header">
-        <nav class="main-nav">
-            <div class="nav-content">
-                <a href="https://denversam.com/" class="logo">Denver Sam</a>
-                <button class="mobile-menu-toggle" aria-label="Toggle menu">
-                    <span aria-hidden="true">☰</span>
-                </button>
-                <div class="nav-links">
-                    <a href="https://denversam.com/#services">Services</a>
-                    <a href="https://denversam.com/#about">About</a>
-                    <a href="/">Estes Park Guide</a>
-                    <a href="https://denversam.com/#contact">Contact</a>
-                    <a href="https://denversam.com/#booking-form" class="book-btn">Book Now</a>
-                </div>
+    <header class="site-header" role="banner">
+        <div class="header-container">
+            <a href="https://denversam.com" class="site-logo" aria-label="Denver Sam - Home">
+                DENVER SAM
+            </a>
+            <div class="header-contact" aria-label="Contact Information">
+                <a href="https://denversam.com/#booking-form" class="book-now-btn" aria-label="Book your ride now">Book Now</a>
             </div>
-            <button class="mobile-menu-close" aria-label="Close menu">
+            <button class="mobile-menu-toggle" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                <span aria-hidden="true">☰</span>
+            </button>
+        </div>
+
+        <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
+            <button class="mobile-menu-close" aria-label="Close mobile menu">
                 <span aria-hidden="true">×</span>
             </button>
             <div class="mobile-menu-content">
@@ -399,15 +398,16 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Denver Sam</h3>
-                    <p>Your trusted transportation service between Denver and Estes Park. Professional, reliable, and focused on your mountain adventure experience.</p>
+                    <p>Professional car for hire service in Denver. Safe, reliable, and experienced transportation you can trust.</p>
+                    <p><strong>Licensed & Insured Professional Driver</strong></p>
                 </div>
 
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h3>Services</h3>
                     <ul role="list">
-                        <li><a href="https://denversam.com/">Home</a></li>
                         <li><a href="https://denversam.com/#services">Airport Transfers</a></li>
-                        <li><a href="https://denversam.com/#services">Estes Park Trips</a></li>
+                        <li><a href="https://denversam.com/#services">Mountain Resorts</a></li>
+                        <li><a href="https://denversam.com/#services">Event Transportation</a></li>
                         <li><a href="https://denversam.com/#services">Business Travel</a></li>
                         <li><a href="https://denversam.com/#services">Hourly Hire</a></li>
                     </ul>
@@ -429,17 +429,20 @@
                 <div class="footer-section">
                     <h3>Contact Sam</h3>
                     <address>
-                        <p><strong>Email:</strong> <a href="mailto:info@denversam.com">info@denversam.com</a></p>
-                        <p><strong>Service Area:</strong> Denver to Estes Park</p>
+                        <p><span class="visually-hidden">Email: </span><a href="mailto:info@denversam.com?subject=Ember%20Restaurant%20Transportation&body=Hello%20Sam%2C%0A%0AI%20would%20like%20to%20inquire%20about%20transportation%20to%20Ember%20Restaurant.%0A%0AThank%20you.">info@denversam.com</a></p>
+                        <p><span class="visually-hidden">Location: </span>Denver, Colorado</p>
+                        <p><span class="visually-hidden">Hours: </span>Available 24/7 - Advanced Booking Recommended</p>
                     </address>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2024 Denver Sam Transportation. All rights reserved.</p>
-                <nav aria-label="Legal">
-                    <a href="https://denversam.com/privacy-policy/">Privacy Policy</a>
+                <p>&copy; 2024 Denver Sam. All rights reserved.</p>
+                <nav class="footer-legal" aria-label="Legal pages">
                     <a href="https://denversam.com/terms-of-service/">Terms of Service</a>
+                    <span aria-hidden="true"> | </span>
+                    <a href="https://denversam.com/privacy-policy/">Privacy Policy</a>
+                    <span aria-hidden="true"> | </span>
                     <a href="https://denversam.com/refund-policy/">Refund Policy</a>
                 </nav>
             </div>
