@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Best Estes Park Restaurants: Reviews, Menus & Prices | Denver Sam</title>
     <meta name="description" content="Complete guide to the best restaurants in Estes Park. Reviews, menus, pricing, and insider tips for Ember, Bird & Jim, The Hive, and Elevations Eatery.">
+    <link rel="canonical" href="https://estes.denversam.com/restaurants/">
     <link rel="stylesheet" href="../style.css">
 
     <!-- Google Analytics -->
@@ -22,16 +23,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="site-header">
-        <nav class="mobile-nav" aria-label="Mobile navigation">
-            <a href="https://denversam.com/" class="logo-link" aria-label="Denver Sam homepage">
-                <h1 class="site-logo">Denver Sam</h1>
+    <a class="skip-link visually-hidden" href="#main-content">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+        <div class="header-container">
+            <a href="https://denversam.com" class="site-logo" aria-label="Denver Sam - Home">
+                DENVER SAM
             </a>
-            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="header-contact" aria-label="Contact Information">
+                <a href="https://denversam.com/#booking-form" class="book-now-btn" aria-label="Book your ride now">Book Now</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                <span aria-hidden="true">☰</span>
             </button>
+        </div>
+
+        <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
             <button class="mobile-menu-close" aria-label="Close mobile menu">
                 <span aria-hidden="true">×</span>
             </button>
@@ -144,6 +151,66 @@
                         <p style="margin: 4px 0; font-size: 13px; color: #666;">🍹 Craft Cocktails • 📍 Downtown • 🌙 Late Hours</p>
                     </div>
                 </article>
+
+                <!-- The Post Mountain House -->
+                <article class="category-card" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e5e7eb;">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <span style="font-size: 24px;">⭐</span>
+                        <span style="color: #fbbf24; font-size: 24px; font-weight: 700;">4.3</span>
+                        <span style="color: #6c757d; font-size: 14px;">(1,020+ reviews)</span>
+                    </div>
+                    <h3 class="card-title"><a href="/restaurants/the-post-mountain-house" style="color: #1f2937; text-decoration: none;">The Post Mountain House</a></h3>
+                    <div style="margin: 10px 0;">
+                        <span style="background: #27ae60; color: white; padding: 4px 12px; border-radius: 12px; font-size: 13px; font-weight: 600;">$20-30 per person</span>
+                        <span style="background: #f39c12; color: white; padding: 4px 12px; border-radius: 12px; font-size: 13px; font-weight: 600; margin-left: 8px;">🏨 Stanley Hotel</span>
+                    </div>
+                    <p class="card-description">
+                        Gluten-free fried chicken inside The Stanley Hotel. Famous Chicken & Waffles 2.0 with black pepper maple syrup. House-brewed beers including smooth El Corn amber. Massive portions worth sharing. Perfect for gluten-free diners and Stanley Hotel visitors. <a href="/restaurants/the-post-mountain-house">Read full review →</a>
+                    </p>
+                    <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid #dee2e6;">
+                        <p style="margin: 4px 0; font-size: 13px; color: #666;">🍗 Gluten-Free • 🍺 House Beer • 🏨 Historic Location</p>
+                    </div>
+                </article>
+
+                <!-- Trailhead Restaurant -->
+                <article class="category-card">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <span style="font-size: 24px;">⭐</span>
+                        <span style="color: #fbbf24; font-size: 24px; font-weight: 700;">4.3</span>
+                        <span style="color: #6c757d; font-size: 14px;">(633+ reviews)</span>
+                    </div>
+                    <h3 class="card-title"><a href="/restaurants/trailhead-restaurant" style="color: #1f2937; text-decoration: none;">Trailhead Restaurant</a></h3>
+                    <div style="margin: 10px 0;">
+                        <span style="background: #27ae60; color: white; padding: 4px 12px; border-radius: 12px; font-size: 13px; font-weight: 600;">$20-30 per person</span>
+                        <span style="background: #059669; color: white; padding: 4px 12px; border-radius: 12px; font-size: 13px; font-weight: 600; margin-left: 8px;">🏞️ RMNP Gateway</span>
+                    </div>
+                    <p class="card-description">
+                        Most convenient dining just outside Rocky Mountain National Park entrance on Fall River Road. Signature Elk Stew and wild game burgers including Mountain Man Burger. Integrated gift shop offers 15% meal discount. Outdoor patio with mountain views and free parking. <a href="/restaurants/trailhead-restaurant">Read full review →</a>
+                    </p>
+                    <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid #dee2e6;">
+                        <p style="margin: 4px 0; font-size: 13px; color: #666;">🦌 Elk Stew • 🎁 Gift Shop • 🅿️ Free Parking</p>
+                    </div>
+                </article>
+
+                <!-- The Grubsteak Restaurant -->
+                <article class="category-card">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <span style="font-size: 24px;">⭐</span>
+                        <span style="color: #fbbf24; font-size: 24px; font-weight: 700;">4.0</span>
+                        <span style="color: #6c757d; font-size: 14px;">(2,675+ reviews)</span>
+                    </div>
+                    <h3 class="card-title"><a href="/restaurants/the-grubsteak-restaurant" style="color: #1f2937; text-decoration: none;">The Grubsteak Restaurant</a></h3>
+                    <div style="margin: 10px 0;">
+                        <span style="background: #27ae60; color: white; padding: 4px 12px; border-radius: 12px; font-size: 13px; font-weight: 600;">$20-30 per person</span>
+                        <span style="background: #8b4513; color: white; padding: 4px 12px; border-radius: 12px; font-size: 13px; font-weight: 600; margin-left: 8px;">🦬 Yak Burgers</span>
+                    </div>
+                    <p class="card-description">
+                        Famous Yak Burgers and exotic wild game meats in downtown Estes Park. Unique protein experience with yak, elk, bison, buffalo, and wild boar options. Hidden outdoor patio and free dessert with cash payment. Post-hiking favorite on main street. <a href="/restaurants/the-grubsteak-restaurant">Read full review →</a>
+                    </p>
+                    <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid #dee2e6;">
+                        <p style="margin: 4px 0; font-size: 13px; color: #666;">🦬 Yak Burgers • 📍 Downtown • 🍰 Cash = Free Dessert</p>
+                    </div>
+                </article>
             </div>
         </section>
 
@@ -187,12 +254,33 @@
                             <td style="padding: 15px;">Wild Game, Post-Hiking</td>
                             <td style="padding: 15px;">Smoked Pheasant Chowder ($14)</td>
                         </tr>
-                        <tr>
+                        <tr style="border-bottom: 1px solid #dee2e6;">
                             <td style="padding: 15px; font-weight: 600;"><a href="/restaurants/elevations-eatery">Elevations</a></td>
                             <td style="padding: 15px;">⭐ 4.4</td>
                             <td style="padding: 15px;">$20-30</td>
                             <td style="padding: 15px;">Downtown, Late Hours</td>
                             <td style="padding: 15px;">Elk Stew</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #dee2e6;">
+                            <td style="padding: 15px; font-weight: 600;"><a href="/restaurants/the-post-mountain-house">The Post</a></td>
+                            <td style="padding: 15px;">⭐ 4.3</td>
+                            <td style="padding: 15px;">$20-30</td>
+                            <td style="padding: 15px;">Gluten-Free, Stanley Hotel</td>
+                            <td style="padding: 15px;">Chicken & Waffles 2.0 ($23)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #dee2e6;">
+                            <td style="padding: 15px; font-weight: 600;"><a href="/restaurants/trailhead-restaurant">Trailhead</a></td>
+                            <td style="padding: 15px;">⭐ 4.3</td>
+                            <td style="padding: 15px;">$20-30</td>
+                            <td style="padding: 15px;">RMNP Gateway, Gift Shop</td>
+                            <td style="padding: 15px;">Elk Stew ($24.99)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; font-weight: 600;"><a href="/restaurants/the-grubsteak-restaurant">The Grubsteak</a></td>
+                            <td style="padding: 15px;">⭐ 4.0</td>
+                            <td style="padding: 15px;">$20-30</td>
+                            <td style="padding: 15px;">Downtown, Yak Burgers</td>
+                            <td style="padding: 15px;">Yak Burger (~$18)</td>
                         </tr>
                     </tbody>
                 </table>
@@ -255,11 +343,11 @@
                 <div class="footer-section">
                     <h3>Estes Park Area</h3>
                     <ul role="list">
-                        <li><a href="https://denversam.com/estes-park/">Estes Park Guide</a></li>
-                        <li><a href="https://denversam.com/rocky-mountain-national-park/">Rocky Mountain National Park</a></li>
-                        <li><a href="https://denversam.com/estes-park/#dining">Dining & Restaurants</a></li>
-                        <li><a href="https://denversam.com/estes-park/#things-to-do">Things to Do</a></li>
-                        <li><a href="https://denversam.com/estes-park/#transportation">Transportation Service</a></li>
+                        <li><a href="/">Estes Park Guide</a></li>
+                        <li><a href="/restaurants/">Restaurants</a></li>
+                        <li><a href="/coffee-shops/">Coffee Shops</a></li>
+                        <li><a href="/attractions/">Attractions</a></li>
+                        <li><a href="/attractions/rocky-mountain-national-park">Rocky Mountain National Park</a></li>
                     </ul>
                 </div>
 
@@ -274,7 +362,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2024 Denver Sam. All rights reserved.</p>
+                <p>&copy; 2025 Denver Sam. All rights reserved.</p>
                 <nav class="footer-legal" aria-label="Legal pages">
                     <a href="https://denversam.com/terms-of-service/">Terms of Service</a>
                     <span aria-hidden="true"> | </span>

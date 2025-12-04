@@ -1,7 +1,27 @@
 /**
  * Estes Park Colorado - Main JavaScript
- * Handles mobile menu and smooth scrolling
+ * Handles mobile menu, smooth scrolling, and menu toggles
  */
+
+/**
+ * Generic menu toggle function for restaurant menu sections
+ * @param {string} menuId - ID of the menu content element to toggle
+ * @param {string} buttonId - ID of the toggle button element
+ */
+function toggleMenuSection(menuId, buttonId) {
+    var menuExtra = document.getElementById(menuId);
+    var toggleBtn = document.getElementById(buttonId);
+
+    if (!menuExtra || !toggleBtn) return;
+
+    if (menuExtra.style.display === 'none' || menuExtra.style.display === '') {
+        menuExtra.style.display = 'block';
+        toggleBtn.textContent = 'Show Less ▲';
+    } else {
+        menuExtra.style.display = 'none';
+        toggleBtn.textContent = 'Show More Menu Items ▼';
+    }
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Elements

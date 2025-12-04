@@ -301,7 +301,10 @@
           "Ember Restaurant: 'Who It's For (And Who It's Not For)'",
           "Bird & Jim Restaurant: 'What to Order (Signature Dishes)'",
           "Elevations Eatery: 'Menu & Pricing'",
-          "Coffee on the Rocks: 'The Duck Pond Experience'"
+          "The Post Mountain House: 'The Dining Experience'",
+          "Coffee on the Rocks: 'The Duck Pond Experience'",
+          "Trailhead Restaurant: 'Practical Information'",
+          "The Grubsteak Restaurant: 'The Wild Game Experience'"
         ],
         "recommended_sections": [
           "What Makes [Restaurant] Special",
@@ -376,11 +379,11 @@
         {
           "name": "Estes Park Area",
           "links": [
-            { "text": "Estes Park Guide", "href": "https://denversam.com/estes-park/" },
-            { "text": "Rocky Mountain National Park", "href": "https://denversam.com/rocky-mountain-national-park/" },
-            { "text": "Dining & Restaurants", "href": "https://denversam.com/estes-park/#dining" },
-            { "text": "Things to Do", "href": "https://denversam.com/estes-park/#things-to-do" },
-            { "text": "Transportation Service", "href": "https://denversam.com/estes-park/#transportation" }
+            { "text": "Estes Park Guide", "href": "/" },
+            { "text": "Restaurants", "href": "/restaurants/" },
+            { "text": "Coffee Shops", "href": "/coffee-shops/" },
+            { "text": "Attractions", "href": "/attractions/" },
+            { "text": "Rocky Mountain National Park", "href": "/attractions/rocky-mountain-national-park" }
           ]
         },
         {
@@ -501,6 +504,27 @@
         "file": "elevations-eatery.html",
         "rating": "4.4",
         "reviews": "563+",
+        "price": "$20-30"
+      },
+      {
+        "name": "The Post Mountain House",
+        "file": "the-post-mountain-house.html",
+        "rating": "4.3",
+        "reviews": "1,020+",
+        "price": "$20-30"
+      },
+      {
+        "name": "Trailhead Restaurant",
+        "file": "trailhead-restaurant.html",
+        "rating": "4.3",
+        "reviews": "633+",
+        "price": "$20-30"
+      },
+      {
+        "name": "The Grubsteak Restaurant",
+        "file": "the-grubsteak-restaurant.html",
+        "rating": "4.0",
+        "reviews": "2,675+",
         "price": "$20-30"
       }
     ]
