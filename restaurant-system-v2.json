@@ -361,7 +361,20 @@
     "paragraph_structure": "One idea per paragraph. Break up complex topics.",
     "pricing_format": "Always show $ amounts with context ($XX-XX per person)",
     "review_integration": "Pull specific quotes and data from Google reviews",
-    "honesty": "Include both positives and negatives - be balanced"
+    "honesty": "Include both positives and negatives - be balanced",
+    "voice_authority": {
+      "eliminate_attribution": "Remove phrases like 'reviews say,' 'customers mention,' 'diners note' - state information directly",
+      "write_as_expert": "Synthesize data and write with authority, as if you're an informed food critic who knows the restaurant well",
+      "avoid_distancing": "Don't use 'reportedly,' 'apparently,' 'seems to' - make direct statements based on the data",
+      "balance_without_hedging": "Include negatives directly ('The steak sandwich runs heavy on bread') not through attribution ('One reviewer complained...')",
+      "maintain_credibility": "Never claim personal visits or first-hand experience - authority comes from synthesis, not false claims"
+    },
+    "examples_voice_transformation": {
+      "weak": "Reviews describe 'moderate noise' and customers say you can talk easily",
+      "strong": "The noise level stays moderate. You can hold normal conversations without shouting, though the bar area runs louder than the dining room.",
+      "weak_2": "One reviewer noted portions were generous but another said the sandwich had too much bread",
+      "strong_2": "Portions match the pricing across most dishes. The steak sandwich runs heavy on bread relative to meat, but entrees like the Mango Shrimp deliver generous portions that justify the cost."
+    }
   },
 
   "technical_notes": {
