@@ -233,6 +233,88 @@
       }
     },
 
+    "data_enrichment_segment": {
+      "description": "OPTIONAL: Data-driven analysis box showing keyword frequency from Google Reviews. Adds credibility and data-backed insights to any content section.",
+      "when_to_use": "When you have keyword frequency data from Google Reviews that reveals meaningful patterns about customer experience",
+      "placement": "Can be inserted into any H2 section where the data is relevant. Most commonly used in sections like 'What Makes Special', 'The [Feature] Experience', or 'Atmosphere' sections.",
+      "example_placement": "Added to 'The Duck Pond Experience' section in Coffee on the Rocks article",
+      "html_structure": {
+        "container": {
+          "background": "#e8f5e9",
+          "border": "2px solid #4caf50",
+          "border_radius": "8px",
+          "padding": "20px",
+          "margin": "20px 0"
+        },
+        "header": {
+          "icon": "📊",
+          "heading": "Data Analysis: [Topic] Mentions",
+          "heading_color": "#2e7d32",
+          "heading_size": "18px"
+        },
+        "content_sections": [
+          {
+            "section": "intro_paragraph",
+            "text": "Review Analysis from X,XXX Google Reviews:",
+            "color": "#1b5e20",
+            "font_weight": "600"
+          },
+          {
+            "section": "keyword_list",
+            "format": "<li><strong>Keyword:</strong> XX mentions - Description</li>",
+            "color": "#2e7d32",
+            "sort_order": "Highest to lowest mention count"
+          },
+          {
+            "section": "key_insight_box",
+            "background": "white",
+            "border_left": "4px solid #4caf50",
+            "padding": "12px",
+            "border_radius": "6px",
+            "text_format": "<strong>Key Insight:</strong> [What the data reveals about customer priorities/experience]",
+            "text_color": "#1b5e20"
+          },
+          {
+            "section": "data_source_note",
+            "text": "Data extracted from Google Reviews keyword frequency analysis. Numbers represent individual review mentions, not total times mentioned across all reviews.",
+            "font_size": "13px",
+            "color": "#558b2f",
+            "font_style": "italic"
+          }
+        ]
+      },
+      "html_example": "<!-- DATA ENRICHMENT SEGMENT -->\n<div style=\"background: #e8f5e9; border: 2px solid #4caf50; border-radius: 8px; padding: 20px; margin: 20px 0;\">\n    <div style=\"display: flex; align-items: center; gap: 10px; margin-bottom: 15px;\">\n        <span style=\"font-size: 24px;\">📊</span>\n        <h3 style=\"margin: 0; color: #2e7d32; font-size: 18px;\">Data Analysis: Duck Pond Mentions</h3>\n    </div>\n    <p style=\"margin: 10px 0; color: #1b5e20; font-weight: 600;\">Review Analysis from 1,759 Google Reviews:</p>\n    <ul style=\"margin: 10px 0; padding-left: 20px; color: #2e7d32;\">\n        <li><strong>River:</strong> 84 mentions - Most referenced feature</li>\n        <li><strong>Duck Pond:</strong> 54 mentions - Second most popular attraction</li>\n    </ul>\n    <p style=\"margin: 10px 0; padding: 12px; background: white; border-radius: 6px; border-left: 4px solid #4caf50; color: #1b5e20;\">\n        <strong>Key Insight:</strong> The duck pond dominates customer experience more than coffee quality.\n    </p>\n    <p style=\"margin: 10px 0; font-size: 13px; color: #558b2f; font-style: italic;\">\n        Data extracted from Google Reviews keyword frequency analysis.\n    </p>\n</div>",
+      "writing_guidelines": [
+        "Extract actual keyword frequencies from Google Review data",
+        "Sort keywords by mention count (highest first)",
+        "Write a meaningful 'Key Insight' that synthesizes what the data reveals",
+        "Keep keyword descriptions brief (3-7 words)",
+        "Use this sparingly - only when data tells a compelling story",
+        "Never fabricate data - only use real review analysis"
+      ],
+      "placement_variety_rule": {
+        "description": "CRITICAL: No two data enrichment segments should exist under the same H2 heading across different restaurant articles",
+        "reasoning": "Ensures variety in article structure and keeps the data segments feeling fresh and contextually appropriate",
+        "implementation": "When adding data enrichment segments to multiple restaurants, distribute them across different H2 sections",
+        "current_placements": [
+          "The Hive Brewery: 'What Makes The Hive Special'",
+          "Ember Restaurant: 'Who It's For (And Who It's Not For)'",
+          "Bird & Jim Restaurant: 'What to Order (Signature Dishes)'",
+          "Elevations Eatery: 'Menu & Pricing'",
+          "Coffee on the Rocks: 'The Duck Pond Experience'"
+        ],
+        "recommended_sections": [
+          "What Makes [Restaurant] Special",
+          "Who It's For (And Who It's Not For)",
+          "What to Order (Signature Dishes)",
+          "Menu & Pricing",
+          "The Dining Experience",
+          "The [Unique Feature] Experience",
+          "Practical Information"
+        ]
+      }
+    },
+
     "faq_section": {
       "description": "Unified FAQ structure with semantic HTML",
       "html_structure": "<section id=\"faq\" class=\"content-section faq-section\">\n  <div class=\"section-header\">\n    <h2>Frequently Asked Questions</h2>\n    <p class=\"section-subtitle\">Common questions about [Restaurant Name]</p>\n  </div>\n  <div class=\"faq-container\">\n    <article class=\"faq-item\">\n      <h3 class=\"faq-question\">[Question]</h3>\n      <p class=\"faq-answer\">[Answer]</p>\n    </article>\n  </div>\n</section>",
