@@ -363,7 +363,7 @@
     "review_integration": "Pull specific quotes and data from Google reviews",
     "honesty": "Include both positives and negatives - be balanced",
     "voice_authority": {
-      "eliminate_attribution": "Remove phrases like 'reviews say,' 'customers mention,' 'diners note' - state information directly",
+      "eliminate_attribution": "NEVER use attribution phrases. Forbidden patterns: 'reviews say/mention/describe/note,' 'customers mention/say,' 'diners note,' 'reviewers mention/call/note/consistently/specifically,' 'one reviewer noted/called/said,' 'multiple/several/many reviews mention,' 'appears in X reviews,' 'mentioned in reviews,' 'according to reviews.' State all information directly as fact.",
       "write_as_expert": "Synthesize data and write with authority, as if you're an informed food critic who knows the restaurant well",
       "avoid_distancing": "Don't use 'reportedly,' 'apparently,' 'seems to' - make direct statements based on the data",
       "balance_without_hedging": "Include negatives directly ('The steak sandwich runs heavy on bread') not through attribution ('One reviewer complained...')",
