@@ -1,0 +1,433 @@
+{
+  "name": "Restaurant System v2.0",
+  "description": "Standardized article structure for restaurant review pages on estes.denversam.com",
+  "version": "2.2",
+  "author": "Claude Code",
+  "last_updated": "2025-12-03",
+
+  "design_principles": {
+    "no_introduction_paragraph": "Start directly with essential info card - no traditional intro",
+    "progressive_disclosure": "Use show/hide toggles for menu items to reduce initial scroll",
+    "mobile_first": "All designs work on mobile screens first",
+    "consistent_spacing": "Use same padding/margin patterns across all sections",
+    "semantic_html": "Use proper HTML5 elements (article, section, h2, h3) for SEO"
+  },
+
+  "color_palette": {
+    "primary_dark": "#2c3e50",
+    "primary_dark_gradient": "#34495e",
+    "accent_blue": "#3498db",
+    "accent_green": "#27ae60",
+    "accent_orange": "#f39c12",
+    "accent_red": "#e74c3c",
+    "text_dark": "#1f2937",
+    "text_medium": "#495057",
+    "text_light": "#6c757d",
+    "background_light": "#f8f9fa",
+    "background_yellow": "#fff9e6",
+    "background_orange": "#fff3e0",
+    "background_blue": "#e3f2fd",
+    "border_light": "#dee2e6",
+    "star_yellow": "#fbbf24",
+    "white": "white"
+  },
+
+  "structure": {
+    "order": [
+      "1. Hero Section",
+      "2. Essential Info Card",
+      "3. Menu & Pricing Section",
+      "4. What Makes Special",
+      "5. What to Order",
+      "6. Who It's For",
+      "7. Practical Information",
+      "8. FAQ Section",
+      "9. CTA Section",
+      "10. Footer"
+    ]
+  },
+
+  "sections": {
+    "hero_section": {
+      "description": "Page title and subtitle",
+      "html_structure": "<section class=\"hero-section\" style=\"padding: 60px 20px;\">\n  <div class=\"hero-container\">\n    <h1 id=\"hero-title\" class=\"hero-title\" style=\"font-size: 2.5rem;\">[Restaurant Name] Review: Menu, Prices & Worth It?</h1>\n    <p class=\"hero-subtitle\">Complete Guide to [Location]'s [Description]</p>\n  </div>\n</section>",
+      "h1_format": "[Restaurant Name] Review: Menu, Prices & Worth It?",
+      "subtitle_format": "Complete Guide to [Location]'s [Description]"
+    },
+
+    "essential_info_card": {
+      "description": "Comprehensive info card with rating, pricing, contact, features",
+      "components": [
+        "Dark gradient header with rating and pricing",
+        "Primary contact section (phone + address)",
+        "Quick info grid (hours, reservations, parking)",
+        "What You Get section",
+        "Perfect For section",
+        "Unique Feature highlight",
+        "Action buttons (Call, Website, Directions)"
+      ],
+      "header_design": {
+        "background": "linear-gradient(135deg, #2c3e50 0%, #34495e 100%)",
+        "border_bottom": "3px solid #3498db",
+        "padding": "25px",
+        "includes": ["star_rating", "review_count", "price_per_person"]
+      },
+      "star_rating_format": {
+        "emoji": "⭐",
+        "number_size": "32px",
+        "number_color": "#fbbf24",
+        "font_weight": "700"
+      },
+      "pricing_badge": {
+        "background": "#27ae60",
+        "text_color": "white",
+        "format": "💰 $XX-XX per person",
+        "box_shadow": "0 2px 8px rgba(39, 174, 96, 0.3)"
+      },
+      "quick_info_grid": {
+        "columns": "repeat(auto-fit, minmax(280px, 1fr))",
+        "gap": "18px",
+        "items": [
+          {
+            "name": "Hours",
+            "icon": "⏰",
+            "border_color": "#2c3e50"
+          },
+          {
+            "name": "Reservations",
+            "icon": "📅",
+            "border_color": "#3498db"
+          },
+          {
+            "name": "Parking",
+            "icon": "🚗",
+            "border_color": "#27ae60"
+          }
+        ]
+      },
+      "action_buttons": [
+        {
+          "text": "Call Now",
+          "icon": "📞",
+          "background": "#27ae60",
+          "href": "tel:+1XXXXXXXXXX"
+        },
+        {
+          "text": "Visit Website",
+          "icon": "🌐",
+          "background": "#3498db",
+          "href": "https://restaurant-website.com",
+          "target": "_blank"
+        },
+        {
+          "text": "Get Directions",
+          "icon": "🗺️",
+          "background": "#2c3e50",
+          "href": "https://maps.google.com/?q=ADDRESS",
+          "target": "_blank"
+        }
+      ]
+    },
+
+    "menu_and_pricing": {
+      "description": "Collapsible menu section with progressive disclosure",
+      "h2_heading": "Menu & Pricing",
+      "container_style": {
+        "background": "#fff9e6",
+        "border_left": "4px solid #f39c12",
+        "border_radius": "6px",
+        "padding": "20px",
+        "margin": "15px 0"
+      },
+      "categories": [
+        "Appetizers",
+        "Burgers & Sandwiches",
+        "Entrees",
+        "Soups & Salads",
+        "Sides",
+        "Desserts",
+        "Drinks/Cocktails",
+        "Kids Menu"
+      ],
+      "item_format": "• [Item Name]: $XX or ~$XX",
+      "toggle_button": {
+        "id_pattern": "[restaurantName]MenuToggle",
+        "text_show": "Show More Menu Items ▼",
+        "text_hide": "Show Less ▲",
+        "style": "background: #3498db; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-weight: 600; cursor: pointer; margin-top: 20px; font-size: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: background 0.3s;"
+      },
+      "javascript_pattern": "function toggle[RestaurantName]Menu() {\n  var menuExtra = document.getElementById('[restaurantName]MenuExtra');\n  var toggleBtn = document.getElementById('[restaurantName]MenuToggle');\n  if (menuExtra.style.display === 'none') {\n    menuExtra.style.display = 'block';\n    toggleBtn.textContent = 'Show Less ▲';\n  } else {\n    menuExtra.style.display = 'none';\n    toggleBtn.textContent = 'Show More Menu Items ▼';\n  }\n}"
+    },
+
+    "what_makes_special": {
+      "description": "Overview section highlighting unique qualities",
+      "h2_heading": "What Makes [Restaurant Name] Special",
+      "content_structure": [
+        "Opening paragraph: Rating context + main differentiator",
+        "2-3 paragraphs covering: food quality, atmosphere, service",
+        "Include specific details from reviews",
+        "Mention any awards/recognition"
+      ],
+      "internal_links": [
+        "Link to other restaurant reviews",
+        "Link to RMNP or Estes Park guides",
+        "Link to denversam.com relevant pages"
+      ]
+    },
+
+    "what_to_order": {
+      "description": "Signature dishes with detailed descriptions",
+      "h2_heading": "What to Order (Signature Dishes)" or "What to Order",
+      "format_per_dish": [
+        "**Dish Name ($price)** - Description covering taste, presentation, portion size",
+        "Include review quotes when relevant",
+        "Mention why it's popular"
+      ],
+      "pro_tip_callout": {
+        "background": "#fff3e0",
+        "border_left": "4px solid #f57c00",
+        "padding": "15px",
+        "margin": "20px 0",
+        "border_radius": "4px",
+        "text_format": "💡 Pro Tip: [Actionable advice]",
+        "text_color": "#e65100",
+        "font_weight": "bold for label"
+      }
+    },
+
+    "who_its_for": {
+      "description": "Target audience and who should avoid",
+      "h2_heading": "Who It's For (And Who It's Not For)",
+      "subsections": [
+        {
+          "label": "Best for:",
+          "content": "List specific audience types and use cases"
+        },
+        {
+          "label": "Not ideal for:",
+          "content": "Honest assessment of limitations"
+        }
+      ],
+      "include_internal_links": true
+    },
+
+    "practical_information": {
+      "description": "Detailed practical guide",
+      "h2_heading": "Complete Practical Guide" or "Practical Information",
+      "topics": [
+        "Reservations",
+        "Getting there (location & parking)",
+        "Payment and tipping",
+        "Best times to visit",
+        "Strategic ordering tips",
+        "Dietary accommodations"
+      ],
+      "money_hack_callout": {
+        "background": "#fff3e0",
+        "border_left": "4px solid #f57c00",
+        "padding": "15px",
+        "margin": "20px 0",
+        "border_radius": "4px",
+        "text_format": "💡 Money Hack: [Specific budget strategy]",
+        "text_color": "#e65100"
+      }
+    },
+
+    "faq_section": {
+      "description": "Unified FAQ structure with semantic HTML",
+      "html_structure": "<section id=\"faq\" class=\"content-section faq-section\">\n  <div class=\"section-header\">\n    <h2>Frequently Asked Questions</h2>\n    <p class=\"section-subtitle\">Common questions about [Restaurant Name]</p>\n  </div>\n  <div class=\"faq-container\">\n    <article class=\"faq-item\">\n      <h3 class=\"faq-question\">[Question]</h3>\n      <p class=\"faq-answer\">[Answer]</p>\n    </article>\n  </div>\n</section>",
+      "classes": {
+        "section": "faq-section",
+        "container": "faq-container",
+        "item": "faq-item",
+        "question": "faq-question",
+        "answer": "faq-answer"
+      },
+      "h2_heading": "Frequently Asked Questions",
+      "subtitle": "Common questions about [Restaurant Name]",
+      "h3_format": "Each question is an h3 element",
+      "standard_questions": [
+        "How much does dinner cost at [Restaurant Name]?",
+        "Do I need reservations at [Restaurant Name]?",
+        "Where do I park for [Restaurant Name]?",
+        "What is [Restaurant Name] known for?",
+        "Does [Restaurant Name] have vegetarian options?",
+        "Is [Restaurant Name] kid-friendly?",
+        "Is [Restaurant Name] worth the price?",
+        "When is the best time to go to [Restaurant Name]?",
+        "What should first-time visitors order at [Restaurant Name]?",
+        "[Restaurant-specific questions based on unique features]"
+      ],
+      "answer_style": "Detailed, specific, data-driven answers with pricing and practical details"
+    },
+
+    "cta_section": {
+      "description": "Call-to-action for transportation service",
+      "class": "cta-section",
+      "h2_heading": "Need a Ride to [Restaurant Name]?",
+      "subtitle": "Let me drive you to [Restaurant Name] and other Estes Park dining destinations",
+      "button_text": "Book Your Ride",
+      "button_href": "https://denversam.com/#booking-form"
+    },
+
+    "footer": {
+      "description": "Standard site footer",
+      "IMPORTANT": "Footer links must remain EXACTLY as specified and point to denversam.com. DO NOT change these links when writing new restaurant articles. These match the original WordPress theme footer.",
+      "class": "site-footer",
+      "role": "contentinfo",
+      "sections": [
+        {
+          "name": "Denver Sam",
+          "content": "Professional car for hire service in Denver. Safe, reliable, and experienced transportation you can trust.",
+          "note": "Include 'Licensed & Insured Professional Driver' text"
+        },
+        {
+          "name": "Services",
+          "links": [
+            { "text": "Airport Transfers", "href": "https://denversam.com/#services" },
+            { "text": "Mountain Resorts", "href": "https://denversam.com/#services" },
+            { "text": "Event Transportation", "href": "https://denversam.com/#services" },
+            { "text": "Business Travel", "href": "https://denversam.com/#services" },
+            { "text": "Hourly Hire", "href": "https://denversam.com/#services" }
+          ]
+        },
+        {
+          "name": "Estes Park Area",
+          "links": [
+            { "text": "Estes Park Guide", "href": "https://denversam.com/estes-park/" },
+            { "text": "Rocky Mountain National Park", "href": "https://denversam.com/rocky-mountain-national-park/" },
+            { "text": "Dining & Restaurants", "href": "https://denversam.com/estes-park/#dining" },
+            { "text": "Things to Do", "href": "https://denversam.com/estes-park/#things-to-do" },
+            { "text": "Transportation Service", "href": "https://denversam.com/estes-park/#transportation" }
+          ]
+        },
+        {
+          "name": "Contact Sam",
+          "email": "info@denversam.com",
+          "location": "Denver, Colorado",
+          "hours": "Available 24/7 - Advanced Booking Recommended"
+        }
+      ],
+      "legal_links": [
+        { "text": "Terms of Service", "href": "https://denversam.com/terms-of-service/" },
+        { "text": "Privacy Policy", "href": "https://denversam.com/privacy-policy/" },
+        { "text": "Refund Policy", "href": "https://denversam.com/refund-policy/" }
+      ],
+      "copyright": "© 2024 Denver Sam. All rights reserved."
+    }
+  },
+
+  "google_analytics": {
+    "gtag_id": "G-LLL4VPHMHH",
+    "gtm_id": "GT-5N2922J",
+    "placement": "In <head> section before closing tag"
+  },
+
+  "navigation": {
+    "IMPORTANT": "These links must remain EXACTLY as specified and point to denversam.com. DO NOT change these links when writing new restaurant articles. These match the original WordPress theme navigation.",
+    "mobile_menu_items": [
+      { "text": "Home", "href": "https://denversam.com/" },
+      { "text": "Services", "href": "https://denversam.com/#services" },
+      { "text": "About Sam", "href": "https://denversam.com/#about" },
+      { "text": "Estes Park", "href": "https://denversam.com/estes-park/" },
+      { "text": "Blog", "href": "https://denversam.com/blog/" },
+      { "text": "Contact", "href": "https://denversam.com/#contact" },
+      { "text": "Book Now", "href": "https://denversam.com/#booking-form" }
+    ]
+  },
+
+  "seo_requirements": {
+    "title_format": "[Restaurant Name] Review: Menu, Prices & Worth It? | Estes Park",
+    "meta_description": "Complete [Restaurant Name] guide: menu, pricing ($XX-XX), reviews, parking, reservations. Is it worth it? Full breakdown from real visitor data.",
+    "h1_format": "[Restaurant Name] Review: Menu, Prices & Worth It?",
+    "h2_sections": [
+      "Menu & Pricing",
+      "What Makes [Restaurant Name] Special",
+      "What to Order",
+      "Who It's For (And Who It's Not For)",
+      "Complete Practical Guide",
+      "Frequently Asked Questions"
+    ],
+    "h3_usage": "Only in FAQ section for questions",
+    "internal_linking": "Link to 3-5 relevant pages including other restaurants, RMNP, denversam.com pages"
+  },
+
+  "content_guidelines": {
+    "tone": "Direct, honest, practical - no fluff",
+    "data_driven": "Use specific numbers from reviews (star rating, review count, pricing, mentions)",
+    "voice": "Second person (you/your) for reader engagement",
+    "paragraph_cap": "50 words maximum per paragraph",
+    "total_length": "Variable based on content needs. Focus on completeness, not word count.",
+    "paragraph_structure": "One idea per paragraph. Break up complex topics.",
+    "pricing_format": "Always show $ amounts with context ($XX-XX per person)",
+    "review_integration": "Pull specific quotes and data from Google reviews",
+    "honesty": "Include both positives and negatives - be balanced"
+  },
+
+  "technical_notes": {
+    "unique_ids": "Each restaurant needs unique IDs for menu toggles to prevent JavaScript conflicts",
+    "id_pattern": "[restaurantName]MenuExtra and [restaurantName]MenuToggle",
+    "examples": [
+      "The Hive: menuExtra / menuToggle",
+      "Bird & Jim: birdJimMenuExtra / birdJimMenuToggle",
+      "Ember: emberMenuExtra / emberMenuToggle",
+      "Elevations: elevationsMenuExtra / elevationsMenuToggle"
+    ],
+    "script_placement": "script.js included before </body>",
+    "inline_scripts": "Menu toggle functions can be inline in the page",
+    "CRITICAL_NAVIGATION_FOOTER_RULE": "Mobile menu and footer links MUST remain consistent across ALL restaurant articles and point to denversam.com URLs as specified in the 'navigation' and 'footer' sections. DO NOT add individual restaurant links to the navigation or footer when writing new articles. These links match the original WordPress theme and must not change."
+  },
+
+  "examples": {
+    "completed_articles": [
+      {
+        "name": "The Hive Brewery",
+        "file": "the-hive-brewery.html",
+        "rating": "4.9",
+        "reviews": "7,376+",
+        "price": "$20-30"
+      },
+      {
+        "name": "Bird & Jim Restaurant",
+        "file": "bird-and-jim-restaurant.html",
+        "rating": "4.5",
+        "reviews": "3,120+",
+        "price": "$30-50"
+      },
+      {
+        "name": "Ember Restaurant",
+        "file": "ember-restaurant.html",
+        "rating": "4.6",
+        "reviews": "856+",
+        "price": "$25-45"
+      },
+      {
+        "name": "Elevations Eatery",
+        "file": "elevations-eatery.html",
+        "rating": "4.4",
+        "reviews": "563+",
+        "price": "$20-30"
+      }
+    ]
+  },
+
+  "checklist": [
+    "✓ Hero section with H1 title and subtitle",
+    "✓ Essential info card with all components",
+    "✓ Menu & Pricing with collapsible toggle",
+    "✓ What Makes Special section",
+    "✓ What to Order section with pro tip callout",
+    "✓ Who It's For section",
+    "✓ Complete Practical Guide with money hack",
+    "✓ FAQ section with semantic HTML (h2, h3 structure)",
+    "✓ CTA section for transportation",
+    "✓ Footer with all links",
+    "✓ Google Analytics (gtag + GTM)",
+    "✓ Mobile navigation with all restaurant links",
+    "✓ Internal linking (3-5 relevant links)",
+    "✓ Unique menu toggle IDs",
+    "✓ script.js included before </body>",
+    "✓ All prices formatted as $XX or $XX-XX",
+    "✓ Rating, review count, and pricing in essential info card"
+  ]
+}
