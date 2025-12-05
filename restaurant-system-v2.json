@@ -968,6 +968,20 @@
         "rating": "4.4",
         "reviews": "1,741+",
         "price": "$30-50"
+      },
+      {
+        "name": "The Wapiti Colorado Pub",
+        "file": "wapiti-colorado-pub.html",
+        "rating": "4.2",
+        "reviews": "3,000+",
+        "price": "$20-30"
+      },
+      {
+        "name": "River Walk Café",
+        "file": "river-walk-cafe.html",
+        "rating": "4.8",
+        "reviews": "400+",
+        "price": "$10-20"
       }
     ]
   },
