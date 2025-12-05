@@ -236,8 +236,19 @@
     "data_enrichment_segment": {
       "description": "OPTIONAL: Visual icon-card grid showing top keywords from Google Reviews. Clean, scannable design that highlights what reviewers mention most.",
       "when_to_use": "When you have keyword frequency data from Google Reviews that reveals 4-6 key themes about the customer experience",
-      "placement": "Can be inserted into any H2 section where the data is relevant. Most commonly used in sections like 'What Makes Special', 'The [Feature] Experience', or 'Atmosphere' sections.",
-      "example_placement": "Added to 'Who It's For' section in Ember Restaurant article",
+      "placement_rules": {
+        "CRITICAL": "Data enrichment MUST be the LAST element in its H2 section",
+        "structure": "H2 Heading > Paragraphs > Data Enrichment (END - nothing after)",
+        "exclusivity": "Data enrichment CANNOT share a section with Pro Tips, Money Hacks, or any other callout boxes",
+        "forbidden_combinations": [
+          "Data enrichment + Pro Tip in same section",
+          "Data enrichment + Money Hack in same section",
+          "Data enrichment + Warning/Tip callout in same section",
+          "Anything after data enrichment within the same H2 section"
+        ],
+        "valid_structure": "subheading > text paragraphs > data enrichment > (next H2 or end of article)"
+      },
+      "example_placement": "Added to 'Who It's For' section in Ember Restaurant article - at the END of that section",
       "design_v2": {
         "style": "Icon Card Grid",
         "description": "Clean, modern card-based layout with emoji icons representing key themes",
@@ -461,20 +472,32 @@
     "total_length": "Variable based on content needs. Focus on completeness, not word count.",
     "paragraph_structure": "One idea per paragraph. Break up complex topics.",
     "pricing_format": "Always show $ amounts with context ($XX-XX per person)",
-    "review_integration": "Pull specific quotes and data from Google reviews",
     "honesty": "Include both positives and negatives - be balanced",
+    "section_limits": {
+      "paragraphs_per_h2": "3-5 paragraphs maximum per H2 section",
+      "when_to_use_3": "Simple topics that don't need extensive coverage",
+      "when_to_use_5": "Complex topics requiring more detail (menu, practical info)"
+    },
+    "CRITICAL_CONTENT_RULES": {
+      "no_staff_names": "NEVER mention specific staff or server names (e.g., 'Server Rachel,' 'Bartender Mike,' 'Batu, Irem'). Staff changes frequently and this implies first-hand experience.",
+      "no_first_hand_claims": "NEVER claim personal visits or first-hand experience. Authority comes from data synthesis, not false claims.",
+      "no_review_attribution": "NEVER attribute information to reviews. Forbidden patterns: 'reviews mention,' 'reviewers say,' 'according to reviews,' 'customers note,' 'one reviewer said,' 'multiple reviews mention.' State all information directly as fact.",
+      "write_as_authority": "Write as an informed expert synthesizing publicly available data. Make direct statements, not hedged observations."
+    },
     "voice_authority": {
-      "eliminate_attribution": "NEVER use attribution phrases. Forbidden patterns: 'reviews say/mention/describe/note,' 'customers mention/say,' 'diners note,' 'reviewers mention/call/note/consistently/specifically,' 'one reviewer noted/called/said,' 'multiple/several/many reviews mention,' 'appears in X reviews,' 'mentioned in reviews,' 'according to reviews.' State all information directly as fact.",
+      "eliminate_attribution": "NEVER use attribution phrases. State all information directly as fact.",
       "write_as_expert": "Synthesize data and write with authority, as if you're an informed food critic who knows the restaurant well",
       "avoid_distancing": "Don't use 'reportedly,' 'apparently,' 'seems to' - make direct statements based on the data",
       "balance_without_hedging": "Include negatives directly ('The steak sandwich runs heavy on bread') not through attribution ('One reviewer complained...')",
       "maintain_credibility": "Never claim personal visits or first-hand experience - authority comes from synthesis, not false claims"
     },
     "examples_voice_transformation": {
-      "weak": "Reviews describe 'moderate noise' and customers say you can talk easily",
-      "strong": "The noise level stays moderate. You can hold normal conversations without shouting, though the bar area runs louder than the dining room.",
-      "weak_2": "One reviewer noted portions were generous but another said the sandwich had too much bread",
-      "strong_2": "Portions match the pricing across most dishes. The steak sandwich runs heavy on bread relative to meat, but entrees like the Mango Shrimp deliver generous portions that justify the cost."
+      "wrong_staff": "Server Rachel provides excellent service with helpful recommendations",
+      "correct_staff": "Service quality remains consistent with helpful menu recommendations",
+      "wrong_reviews": "Reviews mention the elk burger as a standout dish",
+      "correct_reviews": "The elk burger stands out as a signature dish",
+      "wrong_attribution": "Multiple reviewers note the noise level stays moderate",
+      "correct_attribution": "The noise level stays moderate - conversations flow easily without shouting"
     }
   },
 
