@@ -954,6 +954,20 @@
         "rating": "4.0",
         "reviews": "2,675+",
         "price": "$20-30"
+      },
+      {
+        "name": "Park Tavern",
+        "file": "park-tavern.html",
+        "rating": "4.7",
+        "reviews": "172+",
+        "price": "$20-30"
+      },
+      {
+        "name": "Hunters Chop House",
+        "file": "hunters-chop-house.html",
+        "rating": "4.4",
+        "reviews": "1,741+",
+        "price": "$30-50"
       }
     ]
   },
