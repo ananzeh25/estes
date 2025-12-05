@@ -400,15 +400,16 @@
   "structure": {
     "order": [
       "1. Hero Section",
-      "2. Essential Info Card",
-      "3. Menu & Pricing Section",
-      "4. What Makes Special",
-      "5. What to Order",
-      "6. Who It's For",
-      "7. Practical Information",
-      "8. FAQ Section",
-      "9. CTA Section",
-      "10. Footer"
+      "2. Opening Hook",
+      "3. Essential Info Card",
+      "4. Menu & Pricing Section",
+      "5. What Makes Special",
+      "6. What to Order",
+      "7. Who It's For",
+      "8. Practical Information",
+      "9. FAQ Section",
+      "10. CTA Section",
+      "11. Footer"
     ]
   },
 
@@ -418,6 +419,16 @@
       "html_structure": "<section class=\"hero-section\" style=\"padding: 60px 20px;\">\n  <div class=\"hero-container\">\n    <h1 id=\"hero-title\" class=\"hero-title\" style=\"font-size: 2.5rem;\">[Restaurant Name] Review: Menu, Prices & Worth It?</h1>\n    <p class=\"hero-subtitle\">Complete Guide to [Location]'s [Description]</p>\n  </div>\n</section>",
       "h1_format": "[Restaurant Name] Review: Menu, Prices & Worth It?",
       "subtitle_format": "Complete Guide to [Location]'s [Description]"
+    },
+
+    "opening_hook_section": {
+      "description": "2-3 sentence hook that appears between Hero and Essential Info card",
+      "placement": "Immediately after hero section, before Essential Info card",
+      "purpose": "Creates desire, establishes value proposition, sets scene before diving into data",
+      "html_structure": "<section class=\"content-section opening-hook\" style=\"padding-top: 40px;\">\n  <div class=\"article-text\">\n    <p>[Opening hook text - 2-3 sentences, 30-50 words]</p>\n  </div>\n</section>\n\n<!-- Essential Info Block -->\n<section class=\"content-section\" style=\"padding-top: 10px;\">",
+      "css_class": "opening-hook",
+      "css_note": "The .opening-hook class removes bottom padding/margin to eliminate whitespace before Essential Info card",
+      "essential_info_adjustment": "Essential Info section uses padding-top: 10px to maintain proper spacing"
     },
 
     "essential_info_card": {

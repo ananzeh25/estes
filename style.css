@@ -335,6 +335,15 @@ select:focus {
     margin: 0 auto;
 }
 
+/* Opening Hook - no bottom spacing before Essential Info card */
+.content-section.opening-hook {
+    padding-bottom: 0;
+}
+.content-section.opening-hook .article-text,
+.content-section.opening-hook p {
+    margin-bottom: 0;
+}
+
 .alt-bg {
     background: #f8f9fa;
 }
