@@ -234,63 +234,79 @@
     },
 
     "data_enrichment_segment": {
-      "description": "OPTIONAL: Data-driven analysis box showing keyword frequency from Google Reviews. Adds credibility and data-backed insights to any content section.",
-      "when_to_use": "When you have keyword frequency data from Google Reviews that reveals meaningful patterns about customer experience",
+      "description": "OPTIONAL: Visual icon-card grid showing top keywords from Google Reviews. Clean, scannable design that highlights what reviewers mention most.",
+      "when_to_use": "When you have keyword frequency data from Google Reviews that reveals 4-6 key themes about the customer experience",
       "placement": "Can be inserted into any H2 section where the data is relevant. Most commonly used in sections like 'What Makes Special', 'The [Feature] Experience', or 'Atmosphere' sections.",
-      "example_placement": "Added to 'The Duck Pond Experience' section in Coffee on the Rocks article",
-      "html_structure": {
+      "example_placement": "Added to 'Who It's For' section in Ember Restaurant article",
+      "design_v2": {
+        "style": "Icon Card Grid",
+        "description": "Clean, modern card-based layout with emoji icons representing key themes",
         "container": {
-          "background": "#e8f5e9",
-          "border": "2px solid #4caf50",
-          "border_radius": "8px",
-          "padding": "20px",
+          "background": "#fafafa",
+          "border": "1px solid #e0e0e0",
+          "border_radius": "12px",
+          "padding": "24px",
           "margin": "20px 0"
         },
         "header": {
-          "icon": "📊",
-          "heading": "Data Analysis: [Topic] Mentions",
-          "heading_color": "#2e7d32",
-          "heading_size": "18px"
+          "heading": "What Reviewers Mention Most (X Reviews)",
+          "heading_color": "#1f2937",
+          "heading_size": "18px",
+          "text_align": "center",
+          "margin_bottom": "20px"
         },
-        "content_sections": [
-          {
-            "section": "intro_paragraph",
-            "text": "Review Analysis from X,XXX Google Reviews:",
-            "color": "#1b5e20",
-            "font_weight": "600"
-          },
-          {
-            "section": "keyword_list",
-            "format": "<li><strong>Keyword:</strong> XX mentions - Description</li>",
-            "color": "#2e7d32",
-            "sort_order": "Highest to lowest mention count"
-          },
-          {
-            "section": "key_insight_box",
-            "background": "white",
-            "border_left": "4px solid #4caf50",
-            "padding": "12px",
-            "border_radius": "6px",
-            "text_format": "<strong>Key Insight:</strong> [What the data reveals about customer priorities/experience]",
-            "text_color": "#1b5e20"
-          },
-          {
-            "section": "data_source_note",
-            "text": "Data extracted from Google Reviews keyword frequency analysis. Numbers represent individual review mentions, not total times mentioned across all reviews.",
-            "font_size": "13px",
-            "color": "#558b2f",
-            "font_style": "italic"
-          }
-        ]
+        "card_grid": {
+          "display": "flex",
+          "flex_wrap": "wrap",
+          "gap": "12px",
+          "justify_content": "center"
+        },
+        "individual_card": {
+          "background": "white",
+          "border": "1px solid #e5e7eb",
+          "border_radius": "12px",
+          "padding": "16px 20px",
+          "text_align": "center",
+          "min_width": "110px",
+          "flex": "0 1 auto"
+        },
+        "card_icon": {
+          "font_size": "28px",
+          "display": "block",
+          "margin_bottom": "8px"
+        },
+        "card_label": {
+          "font_size": "13px",
+          "color": "#374151",
+          "font_weight": "500"
+        },
+        "footer_note": {
+          "margin_top": "20px",
+          "font_size": "13px",
+          "color": "#6b7280",
+          "text_align": "center",
+          "font_style": "italic"
+        }
       },
-      "html_example": "<!-- DATA ENRICHMENT SEGMENT -->\n<div style=\"background: #e8f5e9; border: 2px solid #4caf50; border-radius: 8px; padding: 20px; margin: 20px 0;\">\n    <div style=\"display: flex; align-items: center; gap: 10px; margin-bottom: 15px;\">\n        <span style=\"font-size: 24px;\">📊</span>\n        <h3 style=\"margin: 0; color: #2e7d32; font-size: 18px;\">Data Analysis: Duck Pond Mentions</h3>\n    </div>\n    <p style=\"margin: 10px 0; color: #1b5e20; font-weight: 600;\">Review Analysis from 1,759 Google Reviews:</p>\n    <ul style=\"margin: 10px 0; padding-left: 20px; color: #2e7d32;\">\n        <li><strong>River:</strong> 84 mentions - Most referenced feature</li>\n        <li><strong>Duck Pond:</strong> 54 mentions - Second most popular attraction</li>\n    </ul>\n    <p style=\"margin: 10px 0; padding: 12px; background: white; border-radius: 6px; border-left: 4px solid #4caf50; color: #1b5e20;\">\n        <strong>Key Insight:</strong> The duck pond dominates customer experience more than coffee quality.\n    </p>\n    <p style=\"margin: 10px 0; font-size: 13px; color: #558b2f; font-style: italic;\">\n        Data extracted from Google Reviews keyword frequency analysis.\n    </p>\n</div>",
+      "html_example": "<!-- DATA ENRICHMENT SEGMENT -->\n<div style=\"background: #fafafa; border: 1px solid #e0e0e0; border-radius: 12px; padding: 24px; margin: 20px 0;\">\n    <h3 style=\"margin: 0 0 20px 0; color: #1f2937; font-size: 18px; text-align: center;\">What Reviewers Mention Most (368 Reviews)</h3>\n    <div style=\"display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;\">\n        <div style=\"background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px 20px; text-align: center; min-width: 110px; flex: 0 1 auto;\">\n            <span style=\"font-size: 28px; display: block; margin-bottom: 8px;\">🥩</span>\n            <span style=\"font-size: 13px; color: #374151; font-weight: 500;\">Steak Frites</span>\n        </div>\n        <div style=\"background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px 20px; text-align: center; min-width: 110px; flex: 0 1 auto;\">\n            <span style=\"font-size: 28px; display: block; margin-bottom: 8px;\">🏞️</span>\n            <span style=\"font-size: 13px; color: #374151; font-weight: 500;\">Lake Views</span>\n        </div>\n        <!-- Add 4-6 cards total -->\n    </div>\n    <p style=\"margin: 20px 0 0 0; font-size: 13px; color: #6b7280; text-align: center; font-style: italic;\">Based on Google Reviews keyword analysis</p>\n</div>",
+      "icon_selection_guide": {
+        "description": "Choose emojis that visually represent the keyword theme",
+        "examples": {
+          "food_items": "🥩 🦬 🦞 🍔 🥗 🍝 🥘 🍳",
+          "scenery": "🏞️ 🌅 🏔️ 🌊 🌲",
+          "service": "👨‍🍳 ⭐ 💯 👍",
+          "atmosphere": "🎵 🕯️ 🍷 ☕",
+          "outdoor": "🏊 🚴 🎣 ⛵ 🏕️ 🐕"
+        }
+      },
       "writing_guidelines": [
-        "Extract actual keyword frequencies from Google Review data",
-        "Sort keywords by mention count (highest first)",
-        "Write a meaningful 'Key Insight' that synthesizes what the data reveals",
-        "Keep keyword descriptions brief (3-7 words)",
+        "Select 4-6 top keywords that represent key themes from reviews",
+        "Choose appropriate emoji icons that visually represent each keyword",
+        "Keep labels brief (1-3 words) - the icon does the heavy lifting",
+        "Include total review count in the heading for credibility",
         "Use this sparingly - only when data tells a compelling story",
-        "Never fabricate data - only use real review analysis"
+        "Never fabricate data - only use real review analysis",
+        "Design is mobile-responsive with flex-wrap"
       ],
       "placement_variety_rule": {
         "description": "CRITICAL: No two data enrichment segments should exist under the same H2 heading across different restaurant articles",
