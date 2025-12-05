@@ -1,9 +1,9 @@
 {
   "name": "Restaurant System v2.0",
   "description": "Standardized article structure for restaurant review pages on estes.denversam.com",
-  "version": "2.4",
+  "version": "2.7",
   "author": "Sam",
-  "last_updated": "2025-12-04",
+  "last_updated": "2025-12-05",
 
   "design_principles": {
     "no_introduction_paragraph": "Start directly with essential info card - no traditional intro",
@@ -44,7 +44,7 @@
       {
         "step": 6,
         "name": "Write Body Content",
-        "action": "Paraphrase data into authoritative prose. 80% informative base, 20% personal voice. No attribution, no staff names, no first-hand claims."
+        "action": "Write as authoritative local guide. State facts directly with confidence. No attribution, no staff names, no first-hand dining claims."
       },
       {
         "step": 7,
@@ -59,7 +59,7 @@
       {
         "step": 9,
         "name": "Final Review",
-        "action": "Check for forbidden patterns (staff names, review attribution, first-hand claims). Verify all prices included. Confirm 3-5 paragraphs per H2."
+        "action": "Check for forbidden patterns (staff names, review attribution, first-hand claims). Verify all prices included. Confirm section word limits met."
       }
     ]
   },
@@ -110,31 +110,271 @@
     }
   },
 
-  "PARAPHRASING_RULES": {
-    "description": "How to transform raw review data into authoritative article content",
-    "core_principle": "You are not summarizing reviews. You are writing as an expert who KNOWS this information. The source is invisible.",
-    "transformation_process": {
-      "step_1": "Read the raw data/reviews",
-      "step_2": "Identify the factual claim or pattern",
-      "step_3": "Rewrite as a direct statement of fact",
-      "step_4": "Remove any trace of source attribution"
+  "SEARCH_MODIFIERS": {
+    "description": "Optimize for how people actually search - not just branded restaurant names",
+
+    "local_modifiers": {
+      "description": "Work these naturally into content, especially opening hook and meta description",
+      "category_terms": ["best", "top", "good", "great", "popular"],
+      "location_terms": ["Estes Park", "downtown Estes", "near RMNP", "Rocky Mountain National Park"],
+      "time_terms": ["open late", "open now", "breakfast", "lunch", "dinner", "happy hour"],
+      "occasion_terms": ["date night", "family dinner", "after hiking", "special occasion", "casual"],
+      "examples": [
+        "best burger in Estes Park",
+        "Estes Park restaurants open late",
+        "where to eat after hiking RMNP",
+        "romantic dinner Estes Park",
+        "family restaurants downtown Estes"
+      ]
     },
-    "examples": {
-      "raw_data": "15 reviews mention the elk burger is amazing, 3 say it's overpriced",
-      "wrong_output": "Reviews consistently mention the elk burger is amazing, though some find it overpriced",
-      "correct_output": "The elk burger stands out as a signature dish. At $22.99, it runs on the pricier side for a burger."
+
+    "comparison_intent": {
+      "description": "Include 1-2 sentences comparing to similar restaurants in the area",
+      "placement": "Who It's For section or What Makes Special section",
+      "format": "For [cuisine type], [Restaurant] offers [differentiator] compared to [competitor] which [their differentiator]",
+      "examples": [
+        "For wild game, Grubsteak offers better variety and lower prices than Bird & Jim, which focuses more on upscale presentation",
+        "If you want craft beer with your meal, The Hive beats Grubsteak's bar selection hands down"
+      ],
+      "rule": "Be factual, not negative. State what each place does well."
     },
-    "pattern_transformations": {
-      "reviews_say_X": "X is the case / X stands out / X defines the experience",
-      "customers_love_X": "X earns consistent praise / X brings diners back",
-      "many_complain_about_X": "X runs inconsistent / X can disappoint / X requires consideration",
-      "one_reviewer_said": "NEVER USE - synthesize into general statement or omit",
-      "according_to_reviews": "NEVER USE - state directly as fact"
+
+    "near_me_optimization": {
+      "description": "Proximity signals for mobile searchers",
+      "include_in_content": [
+        "Walking distance from [landmark]",
+        "X minutes from [popular location]",
+        "Downtown location on [street name]",
+        "Near the [riverwalk/main street/park entrance]"
+      ],
+      "landmarks_to_reference": [
+        "Elkhorn Avenue",
+        "downtown Estes Park",
+        "Lake Estes",
+        "Fall River",
+        "Rocky Mountain National Park entrance",
+        "Estes Park Visitor Center"
+      ],
+      "placement": "Essential info card location field + Practical Information section"
     },
-    "voice_injection_points": {
-      "recommendations": "Add 'I'd order...' or 'If you're only getting one thing...'",
-      "warnings": "Add 'I'd skip...' or 'Real talk -'",
-      "strong_opinions": "Add 'Trust me on this one' or 'Here's the thing'"
+
+    "signature_dish_keywords": {
+      "description": "Ensure unique menu items appear in searchable locations",
+      "placement": [
+        "Meta description (at least one signature dish)",
+        "Opening hook",
+        "H2 or content near top of page"
+      ],
+      "example": "Meta for Grubsteak should include 'yak burger' since people search 'yak burger Estes Park'"
+    }
+  },
+
+  "CONTENT_AND_VOICE": {
+    "_note": "MASTER SECTION: All writing rules consolidated here",
+
+    "IDENTITY": {
+      "description": "Write as a knowledgeable local guide who knows the area thoroughly. State information with confidence and authority. You're providing actionable advice, not hedging with citations.",
+      "tone": "Confident expert sharing what they know",
+      "NOT": "Someone summarizing reviews or citing sources"
+    },
+
+    "OPENING_HOOK": {
+      "description": "Start with 2-3 sentences that set the scene before any info blocks. Create desire, establish what problem this restaurant solves, or paint a quick scenario.",
+      "hook_types": {
+        "problem_solution": {
+          "description": "Address a pain point, offer the fix",
+          "example": "Tired of the same tourist traps on Elkhorn? The Grubsteak serves yak, elk, and bison - actual adventure on a plate, not another overpriced burger."
+        },
+        "scenario": {
+          "description": "Paint a moment the reader can see themselves in",
+          "example": "You just finished Bear Lake trail. You're starving, still in hiking boots, and want something better than fast food. The Grubsteak is 10 minutes away with a patio that doesn't care about dress codes."
+        },
+        "question": {
+          "description": "Ask what they're wondering, then answer it",
+          "example": "What's the best yak burger in Colorado? Most locals point here. The Grubsteak has served wild game on Elkhorn Avenue for decades."
+        },
+        "contrast": {
+          "description": "Set up an expectation, then flip it",
+          "example": "Skip the $50 steakhouse. The Grubsteak delivers better wild game at half the price, and you can show up in trail dust."
+        }
+      },
+      "selection_guide": {
+        "use_problem_solution": "When restaurant solves an obvious frustration (tourist traps, limited options, overpriced competitors)",
+        "use_scenario": "When location/timing is a key selling point (post-hike, downtown convenience)",
+        "use_question": "When restaurant owns a niche (best X in town, only place with Y)",
+        "use_contrast": "When restaurant punches above its price point or defies expectations"
+      },
+      "NOT": "Jumping straight into ratings, hours, or info cards"
+    },
+
+    "VOICE_PATTERNS": {
+      "allowed_authoritative_guide": [
+        "The standout dish is the yak burger",
+        "Order it medium - lean game meat dries out when overcooked",
+        "The back patio is quieter and dog-friendly",
+        "Service slows down during peak hours",
+        "Skip this if you're in a rush"
+      ],
+      "allowed_first_person_logistical_only": [
+        "I'd call ahead for weekend dinner",
+        "I'd park in the back lot",
+        "I'd arrive before 11am to avoid waits"
+      ],
+      "FORBIDDEN": {
+        "attribution_phrases": [
+          "reviewers say",
+          "based on reviews",
+          "visitors report",
+          "locals recommend",
+          "the consensus is",
+          "customers note",
+          "diners comment",
+          "patrons indicate",
+          "according to reviews"
+        ],
+        "staff_names": [
+          "Server Rachel",
+          "Bartender Mike",
+          "ANY specific employee names"
+        ],
+        "false_first_hand_dining_claims": [
+          "When I visited...",
+          "I tried the burger and...",
+          "From my experience there...",
+          "I went there and...",
+          "The last time I was there..."
+        ]
+      }
+    },
+
+    "NEGATIVITY_RATIO": {
+      "ratio": "80% positive, 20% balanced reality",
+      "rule": "Mention criticism once, briefly",
+      "good_example": "Service slows down during peak hours",
+      "bad_example": "Repeated warnings about slow service throughout the article"
+    },
+
+    "SECTION_RULES": {
+      "menu_and_pricing": {
+        "rule": "NO intro text. Jump straight to menu list."
+      },
+      "what_makes_special": {
+        "rule": "2-3 paragraphs max"
+      },
+      "what_to_order": {
+        "rule": "Dish recommendations with prices, authoritative voice"
+      },
+      "who_its_for": {
+        "rule": "1 paragraph 'Best for' + 1 sentence 'Skip if' (70 words max total)"
+      },
+      "practical_info": {
+        "rule": "7 bullet points max"
+      },
+      "faq": {
+        "rule": "Keep as-is"
+      }
+    },
+
+    "SECTION_WORD_TARGETS": {
+      "description": "Expected word counts per section for consistency",
+      "opening_hook": "30-50 words",
+      "what_makes_special": "100-150 words total (2-3 paragraphs)",
+      "what_to_order": "150-250 words total (4-6 dishes)",
+      "who_its_for": "70 words max total",
+      "practical_info": "100-150 words (7 bullet points max)",
+      "faq_answer": "40-80 words each",
+      "pro_tip_callout": "20-40 words",
+      "money_hack_callout": "20-40 words"
+    },
+
+    "PARAGRAPH_RHYTHM": {
+      "description": "Vary paragraph length to prevent monotony",
+      "pattern": "short → medium → short or medium → short → medium",
+      "definitions": {
+        "short": "15-25 words (1-2 sentences)",
+        "medium": "30-50 words (2-3 sentences)"
+      },
+      "example": [
+        "The yak burger is the move here. (short - 7 words)",
+        "Order it medium - lean game meat dries out fast when overcooked. Add pepper jack and guacamole for the best configuration. (medium - 21 words)",
+        "Trust me on the temp. (short - 5 words)"
+      ],
+      "avoid": "Three 50-word paragraphs in a row - feels like a wall of text"
+    },
+
+    "PRICING_FORMAT": {
+      "description": "When to use exact prices vs approximate",
+      "exact_price": {
+        "format": "$18",
+        "use_when": "Price is confirmed from official menu or reliable source"
+      },
+      "approximate_price": {
+        "format": "~$18",
+        "use_when": [
+          "Price may have changed recently",
+          "Source shows price range",
+          "Seasonal menu item"
+        ]
+      },
+      "range_format": {
+        "format": "$15-20",
+        "use_when": "Item has size options or add-ons that affect price"
+      },
+      "per_person_format": {
+        "format": "$20-30 per person",
+        "use_for": "Overall meal cost estimate in info card"
+      }
+    },
+
+    "MISSING_DATA_HANDLING": {
+      "description": "What to do when information isn't available",
+      "hours": {
+        "if_missing": "Write 'Call ahead to confirm hours' instead of guessing",
+        "if_partial": "List known hours, add 'hours may vary seasonally'"
+      },
+      "parking": {
+        "if_missing": "Write 'Street parking available in downtown area'",
+        "if_unknown": "Omit parking bullet point entirely"
+      },
+      "prices": {
+        "if_missing": "Use ~$ with best estimate, or omit item from menu list",
+        "if_outdated": "Add 'prices may have changed' note at end of menu section"
+      },
+      "reservations": {
+        "if_missing": "Write 'Call ahead for parties of 6+' as safe default"
+      },
+      "general_rule": "Never invent data. Omit or use safe defaults."
+    },
+
+    "GENERAL_PRINCIPLES": [
+      "This is a fun read, not a research paper",
+      "Scannable > comprehensive",
+      "Flexibility on word limits where flow demands it",
+      "Internal links can move to end of article or be cut from 'Who It's For'"
+    ],
+
+    "formatting_rules": {
+      "paragraph_cap": "50 words maximum per paragraph",
+      "pricing_format": "Always $XX or $XX-XX with context"
+    },
+
+    "transformation_examples": {
+      "1_attribution_to_direct": {
+        "wrong": "Reviews mention the elk burger as a standout dish.",
+        "right": "The elk burger stands out as a signature dish."
+      },
+      "2_robotic_to_conversational": {
+        "wrong": "The restaurant offers outdoor patio seating with mountain views.",
+        "right": "Grab a patio seat if the weather's nice. The mountain views are honestly unreal."
+      },
+      "3_formal_to_friendly": {
+        "wrong": "Service quality can vary during peak hours.",
+        "right": "Service slows down during peak hours. Go off-peak if you can."
+      },
+      "4_false_experience_to_recommendation": {
+        "wrong": "When I visited, the elk stew was amazing.",
+        "right": "The elk stew is the move here."
+      }
     }
   },
 
@@ -281,32 +521,47 @@
         "text_hide": "Show Less ▲",
         "style": "background: #3498db; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-weight: 600; cursor: pointer; margin-top: 20px; font-size: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: background 0.3s;"
       },
-      "javascript_pattern": "function toggle[RestaurantName]Menu() {\n  var menuExtra = document.getElementById('[restaurantName]MenuExtra');\n  var toggleBtn = document.getElementById('[restaurantName]MenuToggle');\n  if (menuExtra.style.display === 'none') {\n    menuExtra.style.display = 'block';\n    toggleBtn.textContent = 'Show Less ▲';\n  } else {\n    menuExtra.style.display = 'none';\n    toggleBtn.textContent = 'Show More Menu Items ▼';\n  }\n}"
+      "javascript_pattern": "function toggle[RestaurantName]Menu() {\n  var menuExtra = document.getElementById('[restaurantName]MenuExtra');\n  var toggleBtn = document.getElementById('[restaurantName]MenuToggle');\n  if (menuExtra.style.display === 'none') {\n    menuExtra.style.display = 'block';\n    toggleBtn.textContent = 'Show Less ▲';\n  } else {\n    menuExtra.style.display = 'none';\n    toggleBtn.textContent = 'Show More Menu Items ▼';\n  }\n}",
+      "section_checklist": [
+        "□ NO intro paragraph - jump straight to menu",
+        "□ Every item has a price ($XX or ~$XX)",
+        "□ Prices follow PRICING_FORMAT rules",
+        "□ Signature dishes visible before toggle",
+        "□ Toggle button works with unique ID",
+        "□ 'Prices may vary' note if data is outdated"
+      ]
     },
 
     "what_makes_special": {
       "description": "Overview section highlighting unique qualities",
       "h2_heading": "What Makes [Restaurant Name] Special",
       "content_structure": [
-        "Opening paragraph: Rating context + main differentiator",
-        "2-3 paragraphs covering: food quality, atmosphere, service",
-        "Include specific details from reviews",
-        "Mention any awards/recognition"
+        "2-3 paragraphs max",
+        "Opening: main differentiator",
+        "Middle: food quality, atmosphere",
+        "Include specific details"
       ],
       "internal_links": [
         "Link to other restaurant reviews",
         "Link to RMNP or Estes Park guides",
         "Link to denversam.com relevant pages"
+      ],
+      "section_checklist": [
+        "□ 100-150 words total",
+        "□ Paragraph rhythm varies (short/medium/short)",
+        "□ Main differentiator stated in first sentence",
+        "□ No attribution phrases",
+        "□ At least one comparison to similar restaurant"
       ]
     },
 
     "what_to_order": {
       "description": "Signature dishes with detailed descriptions",
-      "h2_heading": "What to Order (Signature Dishes)" or "What to Order",
+      "h2_heading": "What to Order (Signature Dishes)",
       "format_per_dish": [
         "**Dish Name ($price)** - Description covering taste, presentation, portion size",
-        "Include review quotes when relevant",
-        "Mention why it's popular"
+        "Authoritative voice - no attribution",
+        "Mention why it's the move"
       ],
       "pro_tip_callout": {
         "background": "#fff3e0",
@@ -317,34 +572,50 @@
         "text_format": "💡 Pro Tip: [Actionable advice]",
         "text_color": "#e65100",
         "font_weight": "bold for label"
-      }
+      },
+      "section_checklist": [
+        "□ 150-250 words total",
+        "□ 4-6 dishes covered",
+        "□ Every dish has a price (exact or ~approximate)",
+        "□ Signature dish mentioned first",
+        "□ At least one 'I'd order...' recommendation",
+        "□ Pro tip callout included (20-40 words)"
+      ]
     },
 
     "who_its_for": {
-      "description": "Target audience and who should avoid",
+      "description": "Target audience and who should skip",
       "h2_heading": "Who It's For (And Who It's Not For)",
+      "word_limit": "70 words max total",
       "subsections": [
         {
           "label": "Best for:",
-          "content": "List specific audience types and use cases"
+          "content": "1 paragraph listing specific audience types and use cases"
         },
         {
-          "label": "Not ideal for:",
-          "content": "Honest assessment of limitations"
+          "label": "Skip if:",
+          "content": "1 sentence only"
         }
       ],
-      "include_internal_links": true
+      "include_internal_links": true,
+      "section_checklist": [
+        "□ 70 words max total",
+        "□ 'Best for' is one paragraph with specific audience types",
+        "□ 'Skip if' is exactly one sentence",
+        "□ Internal link to alternative restaurant included",
+        "□ No repeated negativity from other sections"
+      ]
     },
 
     "practical_information": {
       "description": "Detailed practical guide",
-      "h2_heading": "Complete Practical Guide" or "Practical Information",
+      "h2_heading": "Practical Information",
+      "format": "7 bullet points max",
       "topics": [
         "Reservations",
-        "Getting there (location & parking)",
-        "Payment and tipping",
+        "Location & parking",
+        "Payment",
         "Best times to visit",
-        "Strategic ordering tips",
         "Dietary accommodations"
       ],
       "money_hack_callout": {
@@ -355,41 +626,30 @@
         "border_radius": "4px",
         "text_format": "💡 Money Hack: [Specific budget strategy]",
         "text_color": "#e65100"
-      }
+      },
+      "section_checklist": [
+        "□ 100-150 words total",
+        "□ 7 bullet points max",
+        "□ Proximity reference included (walking distance, minutes from landmark)",
+        "□ Parking info included (or safe default if unknown)",
+        "□ Money hack callout included (20-40 words)",
+        "□ Missing data handled per MISSING_DATA_HANDLING rules"
+      ]
     },
 
     "data_enrichment_segment": {
-      "description": "OPTIONAL: Visual icon-card grid showing top keywords from Google Reviews. Clean, scannable design that highlights what reviewers mention most.",
-      "when_to_use": "When you have keyword frequency data from Google Reviews that reveals 4-6 key themes about the customer experience",
+      "description": "OPTIONAL: Visual icon-card grid showing top keywords. Clean, scannable design.",
+      "when_to_use": "When you have 4-6 key themes about the restaurant experience",
       "placement_rules": {
         "CRITICAL": "Data enrichment MUST be the LAST element in its H2 section",
         "structure": "H2 Heading > Paragraphs > Data Enrichment (END - nothing after)",
-        "exclusivity": "Data enrichment CANNOT share a section with Pro Tips, Money Hacks, or any other callout boxes",
-        "forbidden_combinations": [
-          "Data enrichment + Pro Tip in same section",
-          "Data enrichment + Money Hack in same section",
-          "Data enrichment + Warning/Tip callout in same section",
-          "Anything after data enrichment within the same H2 section"
-        ],
-        "valid_structure": "subheading > text paragraphs > data enrichment > (next H2 or end of article)"
+        "exclusivity": "Data enrichment CANNOT share a section with Pro Tips, Money Hacks, or any other callout boxes"
       },
-      "example_placement": "Added to 'Who It's For' section in Ember Restaurant article - at the END of that section",
       "design_v2": {
         "style": "Icon Card Grid",
         "description": "Clean, modern card-based layout with emoji icons representing key themes",
-        "container": {
-          "background": "#fafafa",
-          "border": "1px solid #e0e0e0",
-          "border_radius": "12px",
-          "padding": "24px",
-          "margin": "20px 0"
-        },
         "header": {
           "heading": "What This Place Is Known For",
-          "heading_color": "#1f2937",
-          "heading_size": "18px",
-          "text_align": "center",
-          "margin_bottom": "20px",
           "note": "DO NOT use 'What Reviewers Mention' - no attribution language"
         },
         "card_grid": {
@@ -397,76 +657,26 @@
           "flex_wrap": "wrap",
           "gap": "12px",
           "justify_content": "center"
-        },
-        "individual_card": {
-          "background": "white",
-          "border": "1px solid #e5e7eb",
-          "border_radius": "12px",
-          "padding": "16px 20px",
-          "text_align": "center",
-          "min_width": "110px",
-          "flex": "0 1 auto"
-        },
-        "card_icon": {
-          "font_size": "28px",
-          "display": "block",
-          "margin_bottom": "8px"
-        },
-        "card_label": {
-          "font_size": "13px",
-          "color": "#374151",
-          "font_weight": "500"
-        },
-        "footer_note": {
-          "margin_top": "20px",
-          "font_size": "13px",
-          "color": "#6b7280",
-          "text_align": "center",
-          "font_style": "italic"
         }
       },
-      "html_example": "<!-- DATA ENRICHMENT SEGMENT -->\n<div style=\"display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 20px 0;\">\n    <div style=\"background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px 20px; text-align: center; min-width: 110px; flex: 0 1 auto;\">\n        <span style=\"font-size: 28px; display: block; margin-bottom: 8px;\">🥩</span>\n        <span style=\"font-size: 13px; color: #374151; font-weight: 500;\">Steak Frites</span>\n    </div>\n    <div style=\"background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px 20px; text-align: center; min-width: 110px; flex: 0 1 auto;\">\n        <span style=\"font-size: 28px; display: block; margin-bottom: 8px;\">🏞️</span>\n        <span style=\"font-size: 13px; color: #374151; font-weight: 500;\">Lake Views</span>\n    </div>\n    <!-- Add 4-6 cards total, NO header, NO footer attribution -->\n</div>",
-      "icon_selection_guide": {
-        "description": "Choose emojis that visually represent the keyword theme",
-        "examples": {
-          "food_items": "🥩 🦬 🦞 🍔 🥗 🍝 🥘 🍳",
-          "scenery": "🏞️ 🌅 🏔️ 🌊 🌲",
-          "service": "👨‍🍳 ⭐ 💯 👍",
-          "atmosphere": "🎵 🕯️ 🍷 ☕",
-          "outdoor": "🏊 🚴 🎣 ⛵ 🏕️ 🐕"
-        }
-      },
+      "html_example": "<!-- DATA ENRICHMENT SEGMENT -->\n<div style=\"display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 20px 0;\">\n    <div style=\"background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px 20px; text-align: center; min-width: 110px; flex: 0 1 auto;\">\n        <span style=\"font-size: 28px; display: block; margin-bottom: 8px;\">🥩</span>\n        <span style=\"font-size: 13px; color: #374151; font-weight: 500;\">Steak Frites</span>\n    </div>\n    <!-- Add 4-6 cards total, NO header, NO footer attribution -->\n</div>",
       "writing_guidelines": [
-        "Select 4-6 keywords that represent key themes about the restaurant",
-        "Choose appropriate emoji icons that visually represent each keyword",
-        "Keep labels brief (1-3 words) - the icon does the heavy lifting",
+        "Select 4-6 keywords that represent key themes",
         "NO header text - just the icon cards",
-        "NO footer attribution (no 'Based on reviews' text)",
-        "Use sparingly - only when it adds visual value",
-        "Design is mobile-responsive with flex-wrap"
+        "NO footer attribution",
+        "Use sparingly"
       ],
       "placement_variety_rule": {
-        "description": "CRITICAL: No two data enrichment segments should exist under the same H2 heading across different restaurant articles",
-        "reasoning": "Ensures variety in article structure and keeps the data segments feeling fresh and contextually appropriate",
-        "implementation": "When adding data enrichment segments to multiple restaurants, distribute them across different H2 sections",
+        "description": "No two data enrichment segments should exist under the same H2 heading across different articles",
         "current_placements": [
           "The Hive Brewery: 'What Makes The Hive Special'",
-          "Ember Restaurant: 'Who It's For (And Who It's Not For)'",
-          "Bird & Jim Restaurant: 'What to Order (Signature Dishes)'",
+          "Ember Restaurant: 'Who It's For'",
+          "Bird & Jim Restaurant: 'What to Order'",
           "Elevations Eatery: 'Menu & Pricing'",
           "The Post Mountain House: 'The Dining Experience'",
           "Coffee on the Rocks: 'The Duck Pond Experience'",
           "Trailhead Restaurant: 'Practical Information'",
           "The Grubsteak Restaurant: 'The Wild Game Experience'"
-        ],
-        "recommended_sections": [
-          "What Makes [Restaurant] Special",
-          "Who It's For (And Who It's Not For)",
-          "What to Order (Signature Dishes)",
-          "Menu & Pricing",
-          "The Dining Experience",
-          "The [Unique Feature] Experience",
-          "Practical Information"
         ]
       }
     },
@@ -474,29 +684,65 @@
     "faq_section": {
       "description": "Unified FAQ structure with semantic HTML",
       "html_structure": "<section id=\"faq\" class=\"content-section faq-section\">\n  <div class=\"section-header\">\n    <h2>Frequently Asked Questions</h2>\n    <p class=\"section-subtitle\">Common questions about [Restaurant Name]</p>\n  </div>\n  <div class=\"faq-container\">\n    <article class=\"faq-item\">\n      <h3 class=\"faq-question\">[Question]</h3>\n      <p class=\"faq-answer\">[Answer]</p>\n    </article>\n  </div>\n</section>",
-      "classes": {
-        "section": "faq-section",
-        "container": "faq-container",
-        "item": "faq-item",
-        "question": "faq-question",
-        "answer": "faq-answer"
-      },
       "h2_heading": "Frequently Asked Questions",
       "subtitle": "Common questions about [Restaurant Name]",
       "h3_format": "Each question is an h3 element",
-      "standard_questions": [
+
+      "question_strategy": {
+        "description": "Mix generic templates with restaurant-specific questions people actually search",
+        "ratio": "50% generic, 50% restaurant-specific",
+        "restaurant_specific_sources": [
+          "Signature dishes (Does Grubsteak have yak burger?)",
+          "Unique features (Does Ember have lake views?)",
+          "Dietary concerns specific to cuisine (Is the elk burger gamey?)",
+          "Location-specific (Can I walk to Grubsteak from downtown?)",
+          "Comparison queries (Is Grubsteak better than Bird & Jim for burgers?)"
+        ]
+      },
+
+      "generic_templates": [
         "How much does dinner cost at [Restaurant Name]?",
         "Do I need reservations at [Restaurant Name]?",
         "Where do I park for [Restaurant Name]?",
-        "What is [Restaurant Name] known for?",
-        "Does [Restaurant Name] have vegetarian options?",
         "Is [Restaurant Name] kid-friendly?",
         "Is [Restaurant Name] worth the price?",
-        "When is the best time to go to [Restaurant Name]?",
-        "What should first-time visitors order at [Restaurant Name]?",
-        "[Restaurant-specific questions based on unique features]"
+        "When is the best time to go to [Restaurant Name]?"
       ],
-      "answer_style": "Detailed, specific, direct answers with pricing and practical details. No attribution language."
+
+      "restaurant_specific_examples": {
+        "signature_dish_questions": [
+          "Does [Restaurant] have [signature dish]?",
+          "What does [exotic ingredient] taste like at [Restaurant]?",
+          "Is the [signature dish] worth the price?",
+          "How should I order the [dish] cooked?"
+        ],
+        "feature_questions": [
+          "Does [Restaurant] have outdoor seating?",
+          "Is [Restaurant] dog-friendly?",
+          "Does [Restaurant] have a view?",
+          "Does [Restaurant] have happy hour?"
+        ],
+        "comparison_questions": [
+          "Is [Restaurant] better than [Competitor] for [cuisine]?",
+          "What's the difference between [Restaurant] and [Competitor]?"
+        ],
+        "location_questions": [
+          "How far is [Restaurant] from [landmark]?",
+          "Can I walk to [Restaurant] from downtown?"
+        ]
+      },
+
+      "grubsteak_example_faqs": [
+        "Does Grubsteak have yak burger?",
+        "What does yak meat taste like?",
+        "Is Grubsteak better than Bird & Jim for wild game?",
+        "Does Grubsteak have outdoor seating?",
+        "How should I order game meat burgers cooked?",
+        "Is the yak burger worth it?",
+        "Can I walk to Grubsteak from Elkhorn Avenue?"
+      ],
+
+      "answer_style": "Direct answers with pricing and practical details. No attribution language. 40-80 words per answer."
     },
 
     "cta_section": {
@@ -510,7 +756,7 @@
 
     "footer": {
       "description": "Standard site footer",
-      "IMPORTANT": "Footer links must remain EXACTLY as specified and point to denversam.com. DO NOT change these links when writing new restaurant articles. These match the original WordPress theme footer.",
+      "IMPORTANT": "Footer links must remain EXACTLY as specified and point to denversam.com. DO NOT change these links when writing new restaurant articles.",
       "class": "site-footer",
       "role": "contentinfo",
       "sections": [
@@ -551,7 +797,7 @@
         { "text": "Privacy Policy", "href": "https://denversam.com/privacy-policy/" },
         { "text": "Refund Policy", "href": "https://denversam.com/refund-policy/" }
       ],
-      "copyright": "© 2024 Denver Sam. All rights reserved."
+      "copyright": "© 2025 Denver Sam. All rights reserved."
     }
   },
 
@@ -562,7 +808,7 @@
   },
 
   "navigation": {
-    "IMPORTANT": "These links must remain EXACTLY as specified and point to denversam.com. DO NOT change these links when writing new restaurant articles. These match the original WordPress theme navigation.",
+    "IMPORTANT": "These links must remain EXACTLY as specified and point to denversam.com. DO NOT change these links when writing new restaurant articles.",
     "mobile_menu_items": [
       { "text": "Home", "href": "https://denversam.com/" },
       { "text": "Services", "href": "https://denversam.com/#services" },
@@ -576,119 +822,60 @@
 
   "seo_requirements": {
     "title_format": "[Restaurant Name] Review: Menu, Prices & Worth It? | Estes Park",
-    "meta_description": "Complete [Restaurant Name] guide: menu, pricing ($XX-XX), hours, parking, reservations. Is it worth it? Honest breakdown with what to order and skip.",
+    "meta_description": {
+      "format": "[Hook with local modifier]. [Signature dish]. [Price range]. [Location context].",
+      "max_length": "155 characters",
+      "must_include": [
+        "One signature dish or unique feature",
+        "Price range",
+        "Location reference (Estes Park, downtown, near RMNP)"
+      ],
+      "examples": [
+        "Best yak burger in Estes Park? Grubsteak serves wild game on downtown Elkhorn Ave. $20-30 per person. Menu, prices, and honest review.",
+        "Craft beer and bison short ribs in downtown Estes Park. The Hive Brewery: 4.9 stars, $20-30. Full menu, hours, and what to order."
+      ]
+    },
     "h1_format": "[Restaurant Name] Review: Menu, Prices & Worth It?",
     "h2_sections": [
       "Menu & Pricing",
       "What Makes [Restaurant Name] Special",
       "What to Order",
       "Who It's For (And Who It's Not For)",
-      "Complete Practical Guide",
+      "Practical Information",
       "Frequently Asked Questions"
     ],
     "h3_usage": "Only in FAQ section for questions",
-    "internal_linking": "Link to 3-5 relevant pages including other restaurants, RMNP, denversam.com pages"
-  },
-
-  "CONTENT_AND_VOICE": {
-    "_note": "MASTER SECTION: All writing rules consolidated here",
-
-    "identity": {
-      "who_you_are": "A friend who researched everything about this place and is sharing what you learned",
-      "tone": "Friendly expert - conversational, helpful, direct. Like sharing tips with a friend, not writing a travel blog.",
-      "feel": "Reddit-style casual but still informative and trustworthy"
-    },
-
-    "FORBIDDEN_PATTERNS": {
-      "_priority": "CHECK THESE FIRST - violations break the content",
-      "no_staff_names": [
-        "Server Rachel", "Bartender Mike", "Batu, Irem",
-        "ANY specific employee names - staff changes frequently"
-      ],
-      "no_first_hand_claims": [
-        "When I visited...",
-        "I personally tried...",
-        "From my experience there...",
-        "I went there and...",
-        "The last time I was there..."
-      ],
-      "no_review_attribution": [
-        "reviews mention", "reviewers say", "according to reviews",
-        "customers note", "one reviewer said", "multiple reviews mention",
-        "visitors report", "diners comment", "patrons indicate"
-      ],
-      "no_data_source_references": [
-        "Based on reviews", "Analysis shows", "Data indicates",
-        "Research suggests", "Sources confirm"
-      ]
-    },
-
-    "ALLOWED_PATTERNS": {
-      "recommendation_I": [
-        "I'd order...", "I'd skip...", "I'd go with...",
-        "I think...", "I believe...",
-        "If I were you...", "Here's what I'd do..."
-      ],
-      "direct_you": [
-        "You'll want to...", "You're going to love...",
-        "Don't miss...", "Skip the...", "Grab a..."
-      ],
-      "casual_transitions": [
-        "Here's the thing...", "Real talk -", "Trust me on this one",
-        "The move here is...", "Pro tip:"
-      ]
-    },
-
-    "voice_distribution": {
-      "rule": "80% informative base, 20% personal voice",
-      "base_80_percent": {
-        "what": "Clean, direct factual statements without first-person",
-        "example": "The elk stew combines tender meat with vegetables and seasonings, served with sour cream.",
-        "use_for": "Facts, descriptions, menu items, hours, prices, basic info"
+    "internal_linking": {
+      "quantity": "3-5 relevant links per article",
+      "link_to": ["other restaurants", "RMNP guide", "Estes Park guide", "denversam.com pages"],
+      "anchor_text_strategy": {
+        "description": "How to write the clickable text for internal links",
+        "preferred": {
+          "format": "descriptive phrase with restaurant name",
+          "examples": [
+            "upscale wild game at Bird & Jim",
+            "craft beer and bison at The Hive",
+            "lake views at Ember Restaurant"
+          ],
+          "why": "Adds context, helps SEO, tells reader what to expect"
+        },
+        "acceptable": {
+          "format": "restaurant name only",
+          "examples": ["Bird & Jim", "The Hive", "Ember Restaurant"],
+          "when": "In lists or when context is already clear"
+        },
+        "avoid": {
+          "format": "generic phrases",
+          "examples": ["click here", "this restaurant", "another option"],
+          "why": "Wastes SEO value, unhelpful to reader"
+        }
       },
-      "personal_20_percent": {
-        "what": "Strategic I/you moments sprinkled in for warmth",
-        "example": "I'd get the elk stew every time. It's the move.",
-        "use_for": [
-          "Pro Tips and Money Hacks",
-          "Key dish recommendations",
-          "Warnings about what to skip",
-          "Section openers/closers",
-          "Strong opinions"
-        ]
-      },
-      "NEVER_use_personal_voice_for": [
-        "Every paragraph (exhausting)",
-        "Basic facts (hours, prices, address)",
-        "Menu item lists",
-        "FAQ answers"
-      ]
-    },
-
-    "formatting_rules": {
-      "paragraph_cap": "50 words maximum per paragraph",
-      "paragraphs_per_h2": "3-5 paragraphs max per H2 section",
-      "pricing_format": "Always $XX or $XX-XX with context",
-      "balance": "Include BOTH positives and negatives - credibility requires honesty"
-    },
-
-    "transformation_examples": {
-      "1_attribution_to_direct": {
-        "wrong": "Reviews mention the elk burger as a standout dish.",
-        "right": "The elk burger stands out as a signature dish."
-      },
-      "2_robotic_to_conversational": {
-        "wrong": "The restaurant offers outdoor patio seating with mountain views.",
-        "right": "Grab a patio seat if the weather's nice. The mountain views are honestly unreal."
-      },
-      "3_formal_to_friendly": {
-        "wrong": "Service quality can vary during peak hours.",
-        "right": "Real talk - service can be hit or miss during busy times. Go off-peak if you can."
-      },
-      "4_false_experience_to_recommendation": {
-        "wrong": "When I visited, the elk stew was amazing.",
-        "right": "I'd get the elk stew every time. It's the move."
-      }
+      "placement_priority": [
+        "Who It's For section (comparison context)",
+        "What Makes Special section (alternatives)",
+        "End of article before FAQ"
+      ],
+      "example_sentence": "For a more upscale wild game experience, check out Bird & Jim down the street, or grab craft beer with your bison at The Hive."
     }
   },
 
@@ -703,7 +890,7 @@
     ],
     "script_placement": "script.js included before </body>",
     "inline_scripts": "Menu toggle functions can be inline in the page",
-    "CRITICAL_NAVIGATION_FOOTER_RULE": "Mobile menu and footer links MUST remain consistent across ALL restaurant articles and point to denversam.com URLs as specified in the 'navigation' and 'footer' sections. DO NOT add individual restaurant links to the navigation or footer when writing new articles. These links match the original WordPress theme and must not change."
+    "CRITICAL_NAVIGATION_FOOTER_RULE": "Mobile menu and footer links MUST remain consistent across ALL restaurant articles and point to denversam.com URLs as specified."
   },
 
   "examples": {
@@ -761,22 +948,24 @@
   },
 
   "checklist": [
+    "✓ Opening hook (2-3 sentences before info card)",
     "✓ Hero section with H1 title and subtitle",
     "✓ Essential info card with all components",
-    "✓ Menu & Pricing with collapsible toggle",
-    "✓ What Makes Special section",
+    "✓ Menu & Pricing (no intro text, straight to list)",
+    "✓ What Makes Special section (2-3 paragraphs max)",
     "✓ What to Order section with pro tip callout",
-    "✓ Who It's For section",
-    "✓ Complete Practical Guide with money hack",
-    "✓ FAQ section with semantic HTML (h2, h3 structure)",
+    "✓ Who It's For section (70 words max, 1 sentence 'Skip if')",
+    "✓ Practical Info (7 bullet points max)",
+    "✓ FAQ section (50% generic, 50% restaurant-specific questions)",
     "✓ CTA section for transportation",
     "✓ Footer with all links",
-    "✓ Google Analytics (gtag + GTM)",
-    "✓ Mobile navigation with all restaurant links",
-    "✓ Internal linking (3-5 relevant links)",
-    "✓ Unique menu toggle IDs",
-    "✓ script.js included before </body>",
-    "✓ All prices formatted as $XX or $XX-XX",
-    "✓ Rating, review count, and pricing in essential info card"
+    "✓ No forbidden patterns (attribution, staff names, false first-hand claims)",
+    "✓ 80% positive / 20% balanced negativity ratio",
+    "✓ Negativity mentioned once only",
+    "✓ Meta description includes signature dish + location",
+    "✓ Opening hook includes local modifier (best, downtown, near RMNP)",
+    "✓ Proximity reference in Practical Info (walking distance, minutes from landmark)",
+    "✓ At least one comparison to similar restaurant",
+    "✓ Signature dish appears in first 200 words"
   ]
 }
