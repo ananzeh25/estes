@@ -1,9 +1,9 @@
 {
   "name": "Restaurant System v2.0",
   "description": "Standardized article structure for restaurant review pages on estes.denversam.com",
-  "version": "2.2",
-  "author": "Claude Code",
-  "last_updated": "2025-12-03",
+  "version": "2.4",
+  "author": "Sam",
+  "last_updated": "2025-12-04",
 
   "design_principles": {
     "no_introduction_paragraph": "Start directly with essential info card - no traditional intro",
@@ -11,6 +11,131 @@
     "mobile_first": "All designs work on mobile screens first",
     "consistent_spacing": "Use same padding/margin patterns across all sections",
     "semantic_html": "Use proper HTML5 elements (article, section, h2, h3) for SEO"
+  },
+
+  "WORKFLOW": {
+    "description": "Step-by-step process for constructing a restaurant article from raw data",
+    "steps": [
+      {
+        "step": 1,
+        "name": "Extract Core Facts",
+        "action": "Pull out: restaurant name, address, phone, hours, price range, star rating, review count, cuisine type, signature dishes, unique features"
+      },
+      {
+        "step": 2,
+        "name": "Identify Search Intent",
+        "action": "Determine what users are searching for: 'Is it worth it?', 'What should I order?', 'How much does it cost?', 'Do I need reservations?' - structure content to answer these immediately"
+      },
+      {
+        "step": 3,
+        "name": "Build Essential Info Card",
+        "action": "Create the main card with rating, pricing, contact, hours, parking - this answers search intent at a glance"
+      },
+      {
+        "step": 4,
+        "name": "Craft SEO Title & Meta",
+        "action": "Write H1 title using format: '[Restaurant Name] Review: Menu, Prices & Worth It?' - meta description summarizes key facts"
+      },
+      {
+        "step": 5,
+        "name": "Structure H2 Sections",
+        "action": "Create subheadings that match user searches: 'What to Order', 'Who It's For', 'Practical Information' - each H2 should answer a specific user question"
+      },
+      {
+        "step": 6,
+        "name": "Write Body Content",
+        "action": "Paraphrase data into authoritative prose. 80% informative base, 20% personal voice. No attribution, no staff names, no first-hand claims."
+      },
+      {
+        "step": 7,
+        "name": "Add Pro Tips & Money Hacks",
+        "action": "Include actionable insider advice using personal voice ('I'd order...', 'Skip the...')"
+      },
+      {
+        "step": 8,
+        "name": "Build FAQ Section",
+        "action": "Answer common questions with direct, factual responses. Use questions people actually search for."
+      },
+      {
+        "step": 9,
+        "name": "Final Review",
+        "action": "Check for forbidden patterns (staff names, review attribution, first-hand claims). Verify all prices included. Confirm 3-5 paragraphs per H2."
+      }
+    ]
+  },
+
+  "DATA_INPUT_FORMAT": {
+    "description": "How to process raw restaurant data into article content",
+    "expected_inputs": [
+      "Google Reviews data (rating, count, common themes)",
+      "Menu with prices",
+      "Business info (address, phone, hours)",
+      "Unique features and differentiators",
+      "Common complaints/negatives"
+    ],
+    "extraction_priority": {
+      "1_essential": "Name, address, phone, hours, rating, review count, price range",
+      "2_content": "Signature dishes, unique features, atmosphere description",
+      "3_practical": "Parking, reservations, dietary options, best times to visit",
+      "4_balance": "Positives AND negatives - both required for credibility"
+    },
+    "what_to_ignore": [
+      "Individual reviewer names",
+      "Staff/server names",
+      "Specific dates of reviews",
+      "One-off complaints that aren't patterns"
+    ]
+  },
+
+  "SEARCH_INTENT": {
+    "description": "Understanding and satisfying what users are actually searching for",
+    "primary_questions_users_ask": [
+      "Is [restaurant] worth it?",
+      "How much does [restaurant] cost?",
+      "What should I order at [restaurant]?",
+      "Do I need reservations at [restaurant]?",
+      "Is [restaurant] good for families/dates/groups?",
+      "What are the hours for [restaurant]?",
+      "Where do I park at [restaurant]?"
+    ],
+    "how_to_satisfy_intent": {
+      "essential_info_card": "Answers pricing, rating, hours, contact immediately - no scrolling required",
+      "h2_subheadings": "Each H2 should directly answer a user question ('What to Order' answers 'What should I order?')",
+      "faq_section": "Captures long-tail searches with specific Q&A format",
+      "honest_negatives": "Users searching 'is it worth it' want balanced truth, not marketing fluff"
+    },
+    "title_strategy": {
+      "format": "[Restaurant Name] Review: Menu, Prices & Worth It?",
+      "why": "Captures multiple search intents in one title: review seekers, menu seekers, price checkers, value assessors"
+    }
+  },
+
+  "PARAPHRASING_RULES": {
+    "description": "How to transform raw review data into authoritative article content",
+    "core_principle": "You are not summarizing reviews. You are writing as an expert who KNOWS this information. The source is invisible.",
+    "transformation_process": {
+      "step_1": "Read the raw data/reviews",
+      "step_2": "Identify the factual claim or pattern",
+      "step_3": "Rewrite as a direct statement of fact",
+      "step_4": "Remove any trace of source attribution"
+    },
+    "examples": {
+      "raw_data": "15 reviews mention the elk burger is amazing, 3 say it's overpriced",
+      "wrong_output": "Reviews consistently mention the elk burger is amazing, though some find it overpriced",
+      "correct_output": "The elk burger stands out as a signature dish. At $22.99, it runs on the pricier side for a burger."
+    },
+    "pattern_transformations": {
+      "reviews_say_X": "X is the case / X stands out / X defines the experience",
+      "customers_love_X": "X earns consistent praise / X brings diners back",
+      "many_complain_about_X": "X runs inconsistent / X can disappoint / X requires consideration",
+      "one_reviewer_said": "NEVER USE - synthesize into general statement or omit",
+      "according_to_reviews": "NEVER USE - state directly as fact"
+    },
+    "voice_injection_points": {
+      "recommendations": "Add 'I'd order...' or 'If you're only getting one thing...'",
+      "warnings": "Add 'I'd skip...' or 'Real talk -'",
+      "strong_opinions": "Add 'Trust me on this one' or 'Here's the thing'"
+    }
   },
 
   "color_palette": {
@@ -260,11 +385,12 @@
           "margin": "20px 0"
         },
         "header": {
-          "heading": "What Reviewers Mention Most (X Reviews)",
+          "heading": "What This Place Is Known For",
           "heading_color": "#1f2937",
           "heading_size": "18px",
           "text_align": "center",
-          "margin_bottom": "20px"
+          "margin_bottom": "20px",
+          "note": "DO NOT use 'What Reviewers Mention' - no attribution language"
         },
         "card_grid": {
           "display": "flex",
@@ -299,7 +425,7 @@
           "font_style": "italic"
         }
       },
-      "html_example": "<!-- DATA ENRICHMENT SEGMENT -->\n<div style=\"background: #fafafa; border: 1px solid #e0e0e0; border-radius: 12px; padding: 24px; margin: 20px 0;\">\n    <h3 style=\"margin: 0 0 20px 0; color: #1f2937; font-size: 18px; text-align: center;\">What Reviewers Mention Most (368 Reviews)</h3>\n    <div style=\"display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;\">\n        <div style=\"background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px 20px; text-align: center; min-width: 110px; flex: 0 1 auto;\">\n            <span style=\"font-size: 28px; display: block; margin-bottom: 8px;\">🥩</span>\n            <span style=\"font-size: 13px; color: #374151; font-weight: 500;\">Steak Frites</span>\n        </div>\n        <div style=\"background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px 20px; text-align: center; min-width: 110px; flex: 0 1 auto;\">\n            <span style=\"font-size: 28px; display: block; margin-bottom: 8px;\">🏞️</span>\n            <span style=\"font-size: 13px; color: #374151; font-weight: 500;\">Lake Views</span>\n        </div>\n        <!-- Add 4-6 cards total -->\n    </div>\n    <p style=\"margin: 20px 0 0 0; font-size: 13px; color: #6b7280; text-align: center; font-style: italic;\">Based on Google Reviews keyword analysis</p>\n</div>",
+      "html_example": "<!-- DATA ENRICHMENT SEGMENT -->\n<div style=\"display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 20px 0;\">\n    <div style=\"background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px 20px; text-align: center; min-width: 110px; flex: 0 1 auto;\">\n        <span style=\"font-size: 28px; display: block; margin-bottom: 8px;\">🥩</span>\n        <span style=\"font-size: 13px; color: #374151; font-weight: 500;\">Steak Frites</span>\n    </div>\n    <div style=\"background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px 20px; text-align: center; min-width: 110px; flex: 0 1 auto;\">\n        <span style=\"font-size: 28px; display: block; margin-bottom: 8px;\">🏞️</span>\n        <span style=\"font-size: 13px; color: #374151; font-weight: 500;\">Lake Views</span>\n    </div>\n    <!-- Add 4-6 cards total, NO header, NO footer attribution -->\n</div>",
       "icon_selection_guide": {
         "description": "Choose emojis that visually represent the keyword theme",
         "examples": {
@@ -311,12 +437,12 @@
         }
       },
       "writing_guidelines": [
-        "Select 4-6 top keywords that represent key themes from reviews",
+        "Select 4-6 keywords that represent key themes about the restaurant",
         "Choose appropriate emoji icons that visually represent each keyword",
         "Keep labels brief (1-3 words) - the icon does the heavy lifting",
-        "Include total review count in the heading for credibility",
-        "Use this sparingly - only when data tells a compelling story",
-        "Never fabricate data - only use real review analysis",
+        "NO header text - just the icon cards",
+        "NO footer attribution (no 'Based on reviews' text)",
+        "Use sparingly - only when it adds visual value",
         "Design is mobile-responsive with flex-wrap"
       ],
       "placement_variety_rule": {
@@ -370,7 +496,7 @@
         "What should first-time visitors order at [Restaurant Name]?",
         "[Restaurant-specific questions based on unique features]"
       ],
-      "answer_style": "Detailed, specific, data-driven answers with pricing and practical details"
+      "answer_style": "Detailed, specific, direct answers with pricing and practical details. No attribution language."
     },
 
     "cta_section": {
@@ -450,7 +576,7 @@
 
   "seo_requirements": {
     "title_format": "[Restaurant Name] Review: Menu, Prices & Worth It? | Estes Park",
-    "meta_description": "Complete [Restaurant Name] guide: menu, pricing ($XX-XX), reviews, parking, reservations. Is it worth it? Full breakdown from real visitor data.",
+    "meta_description": "Complete [Restaurant Name] guide: menu, pricing ($XX-XX), hours, parking, reservations. Is it worth it? Honest breakdown with what to order and skip.",
     "h1_format": "[Restaurant Name] Review: Menu, Prices & Worth It?",
     "h2_sections": [
       "Menu & Pricing",
@@ -464,40 +590,105 @@
     "internal_linking": "Link to 3-5 relevant pages including other restaurants, RMNP, denversam.com pages"
   },
 
-  "content_guidelines": {
-    "tone": "Direct, honest, practical - no fluff",
-    "data_driven": "Use specific numbers from reviews (star rating, review count, pricing, mentions)",
-    "voice": "Second person (you/your) for reader engagement",
-    "paragraph_cap": "50 words maximum per paragraph",
-    "total_length": "Variable based on content needs. Focus on completeness, not word count.",
-    "paragraph_structure": "One idea per paragraph. Break up complex topics.",
-    "pricing_format": "Always show $ amounts with context ($XX-XX per person)",
-    "honesty": "Include both positives and negatives - be balanced",
-    "section_limits": {
-      "paragraphs_per_h2": "3-5 paragraphs maximum per H2 section",
-      "when_to_use_3": "Simple topics that don't need extensive coverage",
-      "when_to_use_5": "Complex topics requiring more detail (menu, practical info)"
+  "CONTENT_AND_VOICE": {
+    "_note": "MASTER SECTION: All writing rules consolidated here",
+
+    "identity": {
+      "who_you_are": "A friend who researched everything about this place and is sharing what you learned",
+      "tone": "Friendly expert - conversational, helpful, direct. Like sharing tips with a friend, not writing a travel blog.",
+      "feel": "Reddit-style casual but still informative and trustworthy"
     },
-    "CRITICAL_CONTENT_RULES": {
-      "no_staff_names": "NEVER mention specific staff or server names (e.g., 'Server Rachel,' 'Bartender Mike,' 'Batu, Irem'). Staff changes frequently and this implies first-hand experience.",
-      "no_first_hand_claims": "NEVER claim personal visits or first-hand experience. Authority comes from data synthesis, not false claims.",
-      "no_review_attribution": "NEVER attribute information to reviews. Forbidden patterns: 'reviews mention,' 'reviewers say,' 'according to reviews,' 'customers note,' 'one reviewer said,' 'multiple reviews mention.' State all information directly as fact.",
-      "write_as_authority": "Write as an informed expert synthesizing publicly available data. Make direct statements, not hedged observations."
+
+    "FORBIDDEN_PATTERNS": {
+      "_priority": "CHECK THESE FIRST - violations break the content",
+      "no_staff_names": [
+        "Server Rachel", "Bartender Mike", "Batu, Irem",
+        "ANY specific employee names - staff changes frequently"
+      ],
+      "no_first_hand_claims": [
+        "When I visited...",
+        "I personally tried...",
+        "From my experience there...",
+        "I went there and...",
+        "The last time I was there..."
+      ],
+      "no_review_attribution": [
+        "reviews mention", "reviewers say", "according to reviews",
+        "customers note", "one reviewer said", "multiple reviews mention",
+        "visitors report", "diners comment", "patrons indicate"
+      ],
+      "no_data_source_references": [
+        "Based on reviews", "Analysis shows", "Data indicates",
+        "Research suggests", "Sources confirm"
+      ]
     },
-    "voice_authority": {
-      "eliminate_attribution": "NEVER use attribution phrases. State all information directly as fact.",
-      "write_as_expert": "Synthesize data and write with authority, as if you're an informed food critic who knows the restaurant well",
-      "avoid_distancing": "Don't use 'reportedly,' 'apparently,' 'seems to' - make direct statements based on the data",
-      "balance_without_hedging": "Include negatives directly ('The steak sandwich runs heavy on bread') not through attribution ('One reviewer complained...')",
-      "maintain_credibility": "Never claim personal visits or first-hand experience - authority comes from synthesis, not false claims"
+
+    "ALLOWED_PATTERNS": {
+      "recommendation_I": [
+        "I'd order...", "I'd skip...", "I'd go with...",
+        "I think...", "I believe...",
+        "If I were you...", "Here's what I'd do..."
+      ],
+      "direct_you": [
+        "You'll want to...", "You're going to love...",
+        "Don't miss...", "Skip the...", "Grab a..."
+      ],
+      "casual_transitions": [
+        "Here's the thing...", "Real talk -", "Trust me on this one",
+        "The move here is...", "Pro tip:"
+      ]
     },
-    "examples_voice_transformation": {
-      "wrong_staff": "Server Rachel provides excellent service with helpful recommendations",
-      "correct_staff": "Service quality remains consistent with helpful menu recommendations",
-      "wrong_reviews": "Reviews mention the elk burger as a standout dish",
-      "correct_reviews": "The elk burger stands out as a signature dish",
-      "wrong_attribution": "Multiple reviewers note the noise level stays moderate",
-      "correct_attribution": "The noise level stays moderate - conversations flow easily without shouting"
+
+    "voice_distribution": {
+      "rule": "80% informative base, 20% personal voice",
+      "base_80_percent": {
+        "what": "Clean, direct factual statements without first-person",
+        "example": "The elk stew combines tender meat with vegetables and seasonings, served with sour cream.",
+        "use_for": "Facts, descriptions, menu items, hours, prices, basic info"
+      },
+      "personal_20_percent": {
+        "what": "Strategic I/you moments sprinkled in for warmth",
+        "example": "I'd get the elk stew every time. It's the move.",
+        "use_for": [
+          "Pro Tips and Money Hacks",
+          "Key dish recommendations",
+          "Warnings about what to skip",
+          "Section openers/closers",
+          "Strong opinions"
+        ]
+      },
+      "NEVER_use_personal_voice_for": [
+        "Every paragraph (exhausting)",
+        "Basic facts (hours, prices, address)",
+        "Menu item lists",
+        "FAQ answers"
+      ]
+    },
+
+    "formatting_rules": {
+      "paragraph_cap": "50 words maximum per paragraph",
+      "paragraphs_per_h2": "3-5 paragraphs max per H2 section",
+      "pricing_format": "Always $XX or $XX-XX with context",
+      "balance": "Include BOTH positives and negatives - credibility requires honesty"
+    },
+
+    "transformation_examples": {
+      "1_attribution_to_direct": {
+        "wrong": "Reviews mention the elk burger as a standout dish.",
+        "right": "The elk burger stands out as a signature dish."
+      },
+      "2_robotic_to_conversational": {
+        "wrong": "The restaurant offers outdoor patio seating with mountain views.",
+        "right": "Grab a patio seat if the weather's nice. The mountain views are honestly unreal."
+      },
+      "3_formal_to_friendly": {
+        "wrong": "Service quality can vary during peak hours.",
+        "right": "Real talk - service can be hit or miss during busy times. Go off-peak if you can."
+      },
+      "4_false_experience_to_recommendation": {
+        "wrong": "When I visited, the elk stew was amazing.",
+        "right": "I'd get the elk stew every time. It's the move."
+      }
     }
   },
 
