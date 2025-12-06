@@ -1,0 +1,12 @@
+# Private configuration files - not for public deployment
+restaurant-system-v2.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+.vscode/
+.idea/
