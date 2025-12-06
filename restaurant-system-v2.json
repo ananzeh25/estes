@@ -230,12 +230,22 @@
           "customers note",
           "diners comment",
           "patrons indicate",
-          "according to reviews"
+          "according to reviews",
+          "multiple reviews mention",
+          "reviews mention",
+          "one reviewer",
+          "reviewers praise",
+          "reviewers call",
+          "per reviewers",
+          "guests report",
+          "feedback indicates"
         ],
         "staff_names": [
           "Server Rachel",
           "Bartender Mike",
-          "ANY specific employee names"
+          "Ricky",
+          "Angel",
+          "ANY specific employee names from reviews - NEVER mention staff by name"
         ],
         "false_first_hand_dining_claims": [
           "When I visited...",
@@ -243,7 +253,8 @@
           "From my experience there...",
           "I went there and...",
           "The last time I was there..."
-        ]
+        ],
+        "CRITICAL_RULE": "Transform ALL review data into authoritative statements. Instead of 'reviewers say the ribs are great' write 'the ribs are great'. State facts directly as a knowledgeable guide."
       }
     },
 
