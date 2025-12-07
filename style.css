@@ -335,6 +335,11 @@ select:focus {
     margin: 0 auto;
 }
 
+/* Reduce top padding between consecutive content sections */
+.content-section + .content-section {
+    padding-top: 40px;
+}
+
 /* Opening Hook - no bottom spacing before Essential Info card */
 .content-section.opening-hook {
     padding-bottom: 0;
@@ -658,6 +663,10 @@ select:focus {
         padding: 60px 20px;
     }
 
+    .content-section + .content-section {
+        padding-top: 30px;
+    }
+
     .section-header h2 {
         font-size: 2rem;
     }
@@ -707,6 +716,10 @@ select:focus {
 
     .content-section {
         padding: 50px 15px;
+    }
+
+    .content-section + .content-section {
+        padding-top: 25px;
     }
 
     .section-header h2 {
