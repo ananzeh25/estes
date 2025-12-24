@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to Denver Sam</title>
+    <script>
+        (function() {
+            var path = window.location.pathname;
+            var destination = 'https://denversam.com';
+
+            // Check if path matches known sections
+            if (path === '/restaurants' || path === '/restaurants/') {
+                destination = 'https://denversam.com/estes-park/restaurants/';
+            } else if (path.startsWith('/restaurants/')) {
+                // Individual restaurant pages
+                var slug = path.replace('/restaurants/', '').replace(/\/$/, '');
+                destination = 'https://denversam.com/estes-park/restaurants/' + slug + '/';
+            } else if (path === '/coffee-shops' || path === '/coffee-shops/') {
+                destination = 'https://denversam.com/estes-park/coffee-shops/';
+            } else if (path.startsWith('/coffee-shops/')) {
+                var slug = path.replace('/coffee-shops/', '').replace(/\/$/, '');
+                destination = 'https://denversam.com/estes-park/coffee-shops/' + slug + '/';
+            } else if (path === '/attractions' || path === '/attractions/') {
+                destination = 'https://denversam.com/estes-park/attractions/';
+            } else if (path.startsWith('/attractions/')) {
+                var slug = path.replace('/attractions/', '').replace(/\/$/, '');
+                destination = 'https://denversam.com/estes-park/attractions/' + slug + '/';
+            }
+            // All other paths go to denversam.com homepage
+
+            window.location.replace(destination);
+        })();
+    </script>
+</head>
+<body>
+    <p>Redirecting to <a href="https://denversam.com">denversam.com</a>...</p>
+</body>
+</html>
